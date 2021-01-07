@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	{% block head %}
+	{% include "fragments/head.html" %}
+	{% endblock %}
+</head>
+
+<body>
+
+	<div class="loader"></div>
+
+	{% macro addStatus(class) %}{% if class == "error" %}{% set addClass = "error" %}{{ addClass }}{% elif class == "success" %}{% set addClass = "success" %}{{ addClass }}{% elif class == "warning" %}{% set addClass = "warning" %}{{ addClass }}{% endif %}{% endmacro %}
+
+	{% macro notification(title, class, image, text, buttonText, buttonLink, buttonSupport) %}
+	<div class="page-notification__inner">
+		{% if title %}
+		<h2 class="page-notification__title">{{ title }}</h2>
+		{% endif %}
+		{% if image %}
+		<div class="page-notification__img {{addStatus(class)}}">
+			<img class="page-notification__img-icon" src='{{ image }}' alt="Image">
+		</div>
+		{% endif %}
+		<div class="page-notification__description">
+			<p>{{ text }}</p>
+		</div>
+		{% if buttonText %}
+		<div class="page-notification__buttons">
+		<a href="{{buttonLink}}" class="button button--280 button--filled">{{ buttonText }}</a>
+		{% endif %}
+		{% if buttonSupport %}
+		<a href="/pages/contacts/contacts.html" class="button button--280 button--filled"><i class="icon-phone"></i>{{ buttonSupport }}</a>
+		</div>
+		{% endif %}
+	</div>
+	{% endmacro %}
+
+	{% macro checkStatus(status) %}{% if status == "error" %}{% set statusClass = "error" %}{{ statusClass }}{% elif status == "success" %}{% set statusClass = "success" %}{{ statusClass }}{% elif status == "disabled" %}{% set statusClass = "disabled" %}{{ statusClass }}{% endif %}{% endmacro %}
+
+	{% macro fieldText(name, label, placeholder, statusText, status, value, disabled) %}
+	<div class="form__input {{checkStatus(status)}}">
+		<input type="text" id="{{name}}" value="{{value}}" placeholder="{{ placeholder }}" {{ disabled }}>
+		<div class="form__error-message">{{ statusText }}</div>
+		<div class="form__success-message">{{ statusText }}</div>
+	</div>
+	{% endmacro %}
+
+	{% macro fieldTextLabel(name, label, placeholder, statusText, status, value, disabled) %}
+	<div class="form__input {{checkStatus(status)}}">
+		<label class="form__input-label" for="{{name}}">{{label}}</label>
+		<input type="text" id="{{name}}" value="{{value}}" placeholder="{{ placeholder }}" {{ disabled }}>
+		<div class="form__error-message">{{ statusText }}</div>
+		<div class="form__success-message">{{ statusText }}</div>
+	</div>
+	{% endmacro %}
+
+	{% macro fieldPassword(name, label, placeholder, statusText, status, value, disabled) %}
+	<div class="form__input {{checkStatus(status)}}">
+		<input type="password" id="{{ name }}" value="{{value}}" placeholder="{{ placeholder }}" {{ disabled }}>
+		<div class="form__error-message">{{ statusText }}</div>
+		<span class="pass-switch icon-view" data-password-toggler></span>
+	</div>
+	{% endmacro %}
+
+	{% macro fieldPasswordLabel(name, label, placeholder, statusText, status, value, disabled) %}
+	<div class="form__input {{checkStatus(status)}}">
+		<label class="form__input-label" for="{{name}}">{{label}}</label>
+		<input type="password" id="{{ name }}" value="{{value}}" placeholder="{{ placeholder }}" {{ disabled }}>
+		<div class="form__error-message">{{ statusText }}</div>
+		<span class="pass-switch icon-view" data-password-toggler></span>
+	</div>
+	{% endmacro %}
+
+	{% macro fieldEmail(name, label, placeholder, statusText, status, value) %}
+	<div class="form__input {{checkStatus(status)}}">
+		<input type="email" id="{{ name }}" placeholder="{{ placeholder }}" value="{{ value }}">
+		<div class="form__error-message">{{ statusText }}</div>
+	</div>
+	{% endmacro %}
+
+	{% macro fieldPhone(name, label, placeholder, statusText, status, value, dataattr) %}
+	<div class="form__input form__input--phone {{checkStatus(status)}}">
+		<label class="form__input-label" for="{{name}}">{{label}}</label>
+		<input type="tel" id="{{ name }}" placeholder="{{ placeholder }}" value="{{ value }}" {{ dataattr }}>
+		<div class="form__error-message">{{ statusText }}</div>
+	</div>
+	{% endmacro %}
+
+	{% macro fieldDatepicker(name, label, placeholder, value) %}
+	<div class="form__input form__input--datepicker">
+		<label class="form__input-label" for="{{name}}">{{label}}</label>
+		<input type="text" id="{{ name }}" data-datepicker readonly placeholder="{{ placeholder }}" value="{{value}}">
+	</div>
+	{% endmacro %}
+
+	{% macro fieldCode(name, label, placeholder, imageURL, statusText, status) %}
+	<div class="form__input form__input--captcha {{checkStatus(status)}}">
+		<div class="captcha">
+			<input type="text" id="{{ name }}" placeholder="{{ placeholder }}">
+			<div class="captcha__img">
+				<img src="{{ imageURL }}" alt="captcha">
+			</div>
+			<a href="javascript:void(0)" class="captcha__reload icon-refresh"></a>
+		</div>
+		<div class="form__error-message">{{ statusText }}</div>
+	</div>
+	{% endmacro %}
+
+	{% macro fieldCheckbox(name, label, statusText, status) %}
+	<div class="form__input checkbox {{checkStatus(status)}}">
+		<input type="checkbox" id="{{ name }}">
+		<label for="{{ name }}">{{ label | safe }}</label>
+		<div class="form__error-message">{{ statusText }}</div>
+	</div>
+	{% endmacro %}
+
+	{% macro fieldSelect(name, label, options, statusText, status) %}
+	<div class="form__input form__input--select {{checkStatus(status)}}">
+		<select id="{{ name }}" data-select-menu>
+			{% for option in options %}
+			<option>{{ option }}</option>
+			{% endfor %}
+		</select>
+		<div class="form__error-message">{{ statusText }}</div>
+	</div>
+	{% endmacro %}
+
+	{% macro currencySelect(name, options) %}
+	<select id="{{ name }}" data-select-currency>
+		{% for option in options %}
+		<option>{{ option }}</option>
+		{% endfor %}
+	</select>
+	{% endmacro %}
+
+	{% macro fieldTextarea(name, label, placeholder, statusText, status) %}
+	<div class="form__input form__input--textarea {{checkStatus(status)}}">
+		<textarea id="{{ name }}" placeholder="{{ placeholder }}"></textarea>
+		<div class="form__error-message">{{ statusText }}</div>
+	</div>
+	{% endmacro %}
+
+	{% macro buttonSubmit(size, type, content, dataAttr) %}
+	<button type="submit" class="button button--{{size}} button--{{type}}" {{dataAttr}}>{{content}}</button>
+	{% endmacro %}
+
+	{% macro block(name) %}
+	{% include name + ".html" %}
+	{% endmacro %}
+
+	<div class="helper">
+		{% if logged %}
+		{% block header_logged %}
+		{% include "modules/header_logged.html" %}
+		{% endblock %}
+		{% else %}
+		{% block header %}
+		{% include "modules/header.html" %}
+		{% endblock %}
+		{% endif %}
+
+		<main class="main">
+			{% block content %}
+			{% endblock %}
+		</main>
+
+		{% block footer %}
+		{% include "modules/footer.html" %}
+		{% endblock %}
+	</div>
+
+	<!-- first: jQuery -->
+	<script src="../../js/vendor/jquery-3.3.1.min.js"></script>
+	<!-- second: plugins & libraries -->
+	<script src="../../js/vendor/device.min.js"></script>
+	<script src="../../js/vendor/jquery.cookie.js"></script>
+	<script src="../../js/vendor/jquery.lazy.min.js"></script>
+	<script src="../../js/vendor/jquery.selectric.min.js"></script>
+	<script src="../../js/vendor/jquery.scrollbar.js"></script>
+	<script src="../../js/vendor/swiper.min.js"></script>
+	<script src="../../js/vendor/intlTelInput.min.js"></script>
+	<script src="../../js/vendor/datepicker.js"></script>
+	<script src="../../js/vendor/jquery.magnific-popup.js"></script>
+	<script src="../../js/vendor/jquery.fullscreen.min.js"></script>
+	<script src="../../js/vendor/jquery.countdown.min.js"></script>
+	<script src="../../js/vendor/jquery.rating.js"></script>
+	<!-- trird: custom main js -->
+	<script src="../../js/main.js"></script>
+</body>
+
+</html>

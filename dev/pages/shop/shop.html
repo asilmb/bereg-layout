@@ -1,0 +1,18 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+
+{% block content %}
+
+<div class="page page-profile">
+	{{ block("components/menu/profile-menu") }}
+	<section class="page-profile__content page-profile__content--bonuses">
+		<div class="page__header page__header--center">
+			<h1 class="page__title">Bonuses store</h1>
+		</div>
+		<div class="shop__balance">Your balance: <span>1000 USD</span></div>
+		<p class="page__description">By placing real money bets in our room, you will receive additional rewards in the form of bonuses and points that are credited to your real account immediately after the simple wagering conditions are met. <a href="#" class="page__description-link">Details here</a></p>
+		{{ block("components/shop") }}
+	</section>
+</div>
+
+{% endblock %}

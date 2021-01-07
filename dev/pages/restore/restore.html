@@ -1,0 +1,18 @@
+{% extends "master/master.html" %}
+{% block content %}
+
+<div class="page page-half">
+	<div class="container">
+		<div class="page-half--left" data-lazy>
+			<img data-src="../../img/backgrounds/half-image--restore-2.jpg" alt="">
+		</div>
+		<div class="page-half--right">
+			<div class="form__container">
+				<h2 class="form__container-heading">Password recovery</h2>
+				{{ block("components/restore")}}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

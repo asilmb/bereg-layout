@@ -1,0 +1,25 @@
+<!-- Список бонусов -->
+
+<ul class="bonuses__list" data-lazy>
+	{% for item in range(0, 2) %}
+	{{ block("elements/bonus-item-3") }}
+	{% endfor %}
+
+	{{ block("elements/bonus-item") }}
+
+	{% for item in range(0, 2) %}
+	{{ block("elements/bonus-player-available-need-subscribe-item") }}
+	{% endfor %}
+
+	{% for item in range(0, 2) %}
+	{{ block("elements/bonus-item") }}
+	{% endfor %}
+
+	{% for item in range(0, 2) %}
+	{{ block("elements/bonus-player-available-need-subscribe-item") }}
+	{% endfor %}
+
+	{% for item in range(0, 3) %}
+	{{ block("elements/bonus-item-2") }}
+	{% endfor %}
+</ul>

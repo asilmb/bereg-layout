@@ -1,0 +1,39 @@
+/***
+*
+* Уведомление в случае детекта адблока у пользователя
+*
+***/
+
+.alert
+	position fixed
+	bottom 0
+	left 0
+	right 0
+	z-index 1111
+	
+	display none
+	
+	background-color $primary-gray
+	box-shadow 0 -4px 10px rgba(0,0,0,0.25)
+	
+	.container
+		position relative
+		
+		display flex
+		align-items center
+		justify-content space-around
+		flex-wrap wrap
+		min-height 50px
+		padding 15px
+		
+		p
+			margin 10px
+			text-align center
+
+	.icon-close
+		position absolute
+		top 50%
+		right 10px
+		
+		transform translate(0, -50%)
+		cursor pointer

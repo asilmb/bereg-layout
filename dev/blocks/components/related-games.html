@@ -1,0 +1,20 @@
+<!-- game page: similar / related games -->
+<div class="related-games">
+	<h3 class="related-games__heading">Похожие игры</h3>
+	<div class="related-games__list" data-lazy data-related-games-slider>
+		<span class="slider-arrow--prev"><i class="icon-games-types-arrow-prev"></i></span>
+		<div class="swiper-container">
+			<ul class="swiper-wrapper">
+				{% for item in range(0, 2) %}
+				{{ block("elements/game-item") }}
+				{{ block("elements/game-item-2") }}
+				{{ block("elements/game-item-3") }}
+				{{ block("elements/game-item-4") }}
+				{{ block("elements/game-item-5") }}
+				{{ block("elements/game-item-6") }}
+				{% endfor %}
+			</ul>
+		</div>
+		<span class="slider-arrow--next"><i class="icon-games-types-arrow-next"></i></span>
+	</div>
+</div>

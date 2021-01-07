@@ -1,0 +1,115 @@
+.components
+	margin-left: -20px
+	margin-right: -20px
+
+	& h4
+		color: var(--primary-accent-complimentary)
+		text-align: left
+		text-transform: uppercase
+		font-weight: 300
+		letter-spacing: .05em
+		font-family: var(--font-secondary)
+		text-align: right
+		text-shadow: 1px 1px 1px black
+		background-color: #243948
+		padding: 5px
+		margin: 30px 0
+
+		&:first-child
+			margin-top: 0
+
+	& button + button
+		margin-top: 20px
+
+	&__row
+		display: flex
+		margin: 20px 0
+
+	&__cell
+		flex-grow: 1
+		flex-shrink: 0
+		padding: 20px
+		background-color: #222222
+		box-shadow: 0 5px 10px rgba(0,0,0,.55)
+		border-radius: 10px
+		margin: 10px 20px
+
+	&__cell--2
+		width: calc(100%/2 - 40px)
+
+	&__cell--3
+		width: calc(100%/3 - 40px)
+
+	&__cell--4
+		width: calc(100%/4 - 40px)
+
+	&__column-items
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		justify-content: flex-start
+
+		& > *
+			margin-bottom: 5px
+
+	&__row-items
+		display: flex
+		flex-direction: row
+		align-items: center
+		justify-content: flex-start
+
+	&__payment-icons-list,
+	&__crypto-icons-list
+		width: 100%
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-start
+
+		& img
+			object-fit contain
+
+	&__payment-icons-list img
+		height 50px
+		width 80px
+		margin: 5px 10px
+
+	&__crypto-icons-list img
+		height 40px
+		width 40px
+		margin: 10px 25px 0 0
+
+	&__games-icons-list
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-around
+
+		& i
+			font-size: 50px
+			margin: 10px
+	& .search-demo-block
+		display: flex;
+		justify-content: space-between
+		align-items center
+
+	&__list
+		grid-template-columns repeat(1,1fr)
+		margin 0 auto
+
+		&--news
+			max-width 290px
+
+		&--msg
+			max-width 290px
+
+	.tables
+		&__list
+			max-width 340px
+
+	.bonuses
+		&__list
+			max-width 290px
+
+
+	.news
+		&__list
+			max-width 290px

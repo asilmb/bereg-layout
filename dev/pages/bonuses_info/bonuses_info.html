@@ -1,0 +1,44 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+{% block content %}
+
+<div class="page page-one-bonuse">
+	<div class="bonus-info__header" data-lazy>
+		<img data-src="/img/components/bonuses/bonus-info.svg" alt="">
+	</div>
+
+	<div class="page__header page__header--center">
+		<h1 class="page__title">Bonus</h1>
+	</div>
+
+	<div class="bonus-info">
+		<div class="bonus-info__content">
+			<h2 class="bonus-info__title">50 FREE SPINS FOR REGISTRATION!</h2>
+			<div class="bonus-info__description">
+				<p>Get 50 spins in the <span class="game-name">2020 Game slot</span></p>
+				<p>To receive a bonus, do not forget to select it when registering!</p>
+				<p>Rate: <span class="bonus-bet">10 USD / 8 EUR</span></p>
+			</div>
+			<ul class="bonus-info__rules">
+				<li class="bonus-info__rules-row">
+					<span class="bonus-info__rules-cell">Amount:</span>
+					<span class="bonus-info__rules-cell">87.00</span>
+				</li>
+				<li class="bonus-info__rules-row">
+					<span class="bonus-info__rules-cell">Wager:</span>
+					<span class="bonus-info__rules-cell">1234</span>
+				</li>
+				<li class="bonus-info__rules-row">
+					<span class="bonus-info__rules-cell">Currency:</span>
+					<span class="bonus-info__rules-cell">USD</span>
+				</li>
+				<li class="bonus-info__rules-row">
+					<span class="bonus-info__rules-cell">Date:</span>
+					<span class="bonus-info__rules-cell">25.03.2020 14:43</span>
+				</li>
+			</ul>
+			<a data-modal href="/pages/modals/bonuses_giveaway/bonuses_giveaway.html" class="button button--280 button--filled">Subscribe</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

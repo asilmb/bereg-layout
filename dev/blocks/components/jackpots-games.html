@@ -1,0 +1,7 @@
+<div class="jackpots__games">
+	<ul class="games__list" data-lazy>
+		{% for item in range(0, 3) %}
+		{{ block("elements/game-item") }}
+		{% endfor %}
+	</ul>
+</div>

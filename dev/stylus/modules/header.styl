@@ -1,0 +1,244 @@
+// -----------------------------------------------
+// Module - Header
+// -----------------------------------------------
+.header
+	width: 100%
+	background-color: var(--color-surface)
+	position: fixed
+	top: 0
+	z-index: 10
+
+	&__layout
+		display: flex
+		justify-content: space-between
+		width: 100%
+		max-width 1920px
+		margin auto
+
+		&-left,
+		&-right
+			display: flex
+			flex-direction: column
+			width: calc(50% - 155px / 2)
+			height 100%
+			flex-grow: 0
+			flex-shrink: 0
+
+		&-top
+			display: flex
+			height: 50px
+			padding-left: 20px
+			padding-right: 20px
+
+		&-bottom
+			display: flex
+			height: 94px
+			padding-top: 4px
+			padding-left: 20px
+			padding-right: 20px
+
+		&-left &-top,
+		&-left &-bottom
+			justify-content: flex-start
+
+		&-right &-top,
+		&-right &-bottom
+			justify-content: flex-end
+
+
+		/* gold lines */
+		&-top,
+		&-bottom
+			position: relative
+
+			&:after
+				content: ""
+				height: 2px
+				width: auto
+				position: absolute
+
+		&-top:after
+			bottom: -1px
+
+		&-bottom:after
+			top: 4px
+
+		&-left &-top:after,
+		&-left &-bottom:after
+			left: 0
+		&-left &-top:after
+			right: 20px
+		&-left &-bottom:after
+			right: -30px
+		&-left &-top:after
+			background-image: linear-gradient(90deg, #B29D77 0%, rgba(160,135,97,.5) 78.13%, rgba(145,117,79,0) 100%)
+		&-left &-bottom:after
+			background-image: linear-gradient(90deg, #B29D77 0%, #B6A37D 37.5%, rgba(158, 133, 95, 0.358333) 91.15%, rgba(145, 117, 79, 0) 100%)
+
+		&-right &-top:after,
+		&-right &-bottom:after
+			right: 0
+		&-right &-top:after
+			left: 20px
+		&-right &-bottom:after
+			left: -30px
+		&-right &-top:after
+			background-image: linear-gradient(270deg, #B29D77 0%, rgba(160,135,97,.5) 78.13%, rgba(145,117,79,0) 100%)
+		&-right &-bottom:after
+			background-image: linear-gradient(270deg, #B29D77 0%, #B6A37D 37.5%, rgba(158, 133, 95, 0.358333) 91.15%, rgba(145, 117, 79, 0) 100%)
+
+
+	// ----- header: left part stuff ---------------------------------------------
+	&__search
+		width: 80px
+		height: 100%
+		color: var(--primary-accent-complimentary)
+		font-size: 18px
+		padding: 25px 15px
+		transition: $t-color
+		cursor: pointer
+
+		&:hover,
+		&.active
+			color: var(--primary-accent)
+
+	// ----- header: right part stuff --------------------------------------------
+	&__buttons
+		height: 100%
+		display: flex
+		justify-content: flex-end
+		align-items: center
+
+	&__user
+		display: flex
+		justify-content: flex-end
+		align-items: center
+
+	// ----- header < 1220: BURGER MENU stuff ------------------------------------
+	&__burger
+		display: none
+		height: 100%
+		margin-left: -30px
+		position: relative
+
+		&-icon
+			height: 100%
+			width: 80px
+			display: flex
+			justify-content: center
+			align-items: center
+			padding-top: 15px
+			padding-left: 25px
+			cursor: pointer
+
+			& .icon-header-burger
+				font-size: 26px
+				color: var(--primary-accent-darker)
+				transition: $t-text-shadow
+
+			&.active .icon-header-burger
+				text-shadow: var(--primary-shadow)
+
+		&-menu
+			display: none
+			min-width: 140px
+			background-color: var(--secondary-accent)
+			position: absolute
+			top: 100%
+			left: 0
+			overflow: hidden
+			z-index: 1
+
+			/* header top menu in burger */
+			& .header-top-menu
+				width: 100%
+				height: auto
+				padding-top: 5px
+				margin: 0
+
+				& .menu-item
+					width: 100%
+					text-align: left
+
+					&:not(:last-of-type)
+						margin: 0
+
+					& > a
+						width: 100%
+						padding-top: 8px
+						padding-bottom: 7px
+
+						&:hover
+							color: var(--secondary-accent)
+							background-color: var(--primary-accent)
+						&:hover:before
+							color: var(--secondary-accent)
+
+					&.сurrent-menu-item > a
+						color: var(--secondary-accent)
+						background-color: var(--primary-accent)
+					&.сurrent-menu-item > a:before
+						color: var(--secondary-accent)
+
+			/* header nav menu in burger */
+			& .header-menu
+				width: 100%
+				height: auto
+				padding-top: 5px
+				margin: 0
+
+				& .menu-item
+					width: 100%
+					max-width: 100%
+					text-align: left
+
+					&:not(:last-of-type)
+						margin: 0
+
+					& > a
+						font-size: 12px
+						line-height: 14px
+						color: var(--primary-accent-complimentary)
+						padding: 10px 10px 10px 35px
+
+						&:before
+							left: 10px
+
+						&:hover
+							color: var(--secondary-accent)
+							background-color: var(--primary-accent)
+
+					&.menu-item-has-children
+						max-width: 100%
+						padding-right: 0
+
+						&:before,
+						&:after
+							display: none
+
+					& .sub-menu
+						min-width: 100%
+						max-height: none
+						padding: 0
+						visibility: visible
+						position: static
+						transition: none
+						z-index: 0
+
+						& .menu-item
+							& > a
+								font-size: 12px
+								line-height: 14px
+								padding: 8px 10px 7px
+
+								&:hover
+									color: var(--secondary-accent)
+									background-color: var(--primary-accent)
+
+							&:not(:last-child)
+								margin: 0
+
+					&.сurrent-menu-item > a,
+					&.сurrent-menu-item > a i
+						color: var(--secondary-accent)
+						background-color: var(--primary-accent)

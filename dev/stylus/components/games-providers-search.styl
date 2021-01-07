@@ -1,0 +1,99 @@
+.games-types__menu-outer + .games__providers-search
+	position: relative
+
+.games__providers-search
+	min-height: 115px
+	width: 100%
+	display: flex
+	align-items: center
+	background-color: #25000A
+	padding: 15px 0
+	margin-bottom: 30px
+
+	&-inner
+		width: 100%
+		max-width: 1575px
+		padding: 0 15px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin: auto
+
+	&-left
+		display: flex
+		justify-content: flex-start
+		align-items: center
+
+	&-right
+		display: flex
+		justify-content: flex-end
+		align-items: center
+
+		/* search at this panel */
+		& .games__search
+			flex-shrink: 0
+			padding: 20px
+			margin-left: 35px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1220px)
+	.games__providers-search
+		&-right
+			& .games__search
+				margin-right: -10px
+				margin-left: 30px
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1180px)
+	.games-sort
+		margin-left: -15px
+
+		&__heading
+			display: none
+
+	.games__providers-search
+		padding-bottom: 70px
+
+		&-right .games__search
+			position: absolute
+			left: 50%
+			bottom: 0
+			transform: translateX(-50%)
+			padding-bottom: 5px
+			margin: auto
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 768px)
+	.games__providers-search
+		margin-bottom: 15px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 580px)
+	.games__providers-search
+		align-items: flex-start
+		padding-top: 95px
+		padding-right: 40px
+		padding-bottom: 25px
+
+		&-left .games-sort__params
+			position: absolute
+			top: 0
+			left: 0
+
+		&-right .provider-menu
+			margin-right: -35px
+
+		&-right .games__search
+			width: 65px
+			height: 65px
+			top: 0
+			right: 0
+			left: auto
+			bottom: auto
+			transform: none
+			padding: 0
+			overflow: hidden
+
+			& span
+				display: none

@@ -1,0 +1,17 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+
+{% block content %}
+
+<div class="page page-profile">
+	{{ block("components/menu/profile-menu") }}
+	<section class="page-profile__content page-profile__content--messages">
+		<div class="msg__list-wrapper">
+			<h1 class="page__title">Messages</h1>
+			{{ block("components/messages-list") }}
+			{{ block("components/pagination")}}
+		</div>
+	</section>
+</div>
+
+{% endblock %}

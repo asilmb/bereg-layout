@@ -1,0 +1,175 @@
+.games__section
+  padding-top: 15px
+  position: relative
+
+  /* gold line on bottom */
+  & .container
+    position: relative
+
+    &:after
+      content: ""
+      height: 2px
+      background-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(222,175,118,0.5) 25%, #DCA96B 50%, rgba(222,175,118,0.5) 75%, rgba(0,0,0,0) 100%);
+      position: absolute
+      left: 0
+      right: 0
+      pointer-events: none
+      z-index: 1
+
+  &--x-pro .container:after
+    display: none
+
+  /* bg */
+  &--new,
+  &--recommended
+    background-image: url("../img/backgrounds/games-section-bg.jpg")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: top center
+
+  & .games__list
+    position: relative
+    z-index: 1
+
+  /* ------------------------------------------------------------------------ */
+  &-heading
+    width: 100%
+    min-height: 60px
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    font-family: var(--font-secondary)
+    font-size: 24px
+    line-height: 24px
+    text-align: left
+    font-weight: 400
+    text-transform: none
+    margin-bottom: 0
+
+    &:before
+      content: ""
+      width: 57px
+      height: 57px
+      background-image: url("../img/backgrounds/games-section-title.png")
+      background-size: contain
+      background-repeat: no-repeat
+
+  &-button
+    text-align: center
+    padding-top: 40px
+    padding-bottom: 40px
+
+  /* ------------------------------------------------------------------------ */
+  /* coins & cards on side */
+  &--popular,
+  &--new,
+  &--recommended
+
+    &:before,
+    &:after
+      content: ""
+      background-size: contain
+      background-repeat: no-repeat
+      position: absolute
+      pointer-events: none
+
+  &--popular
+    &:before
+      width: 205px
+      height: 615px
+      background-image: url("../img/backgrounds/games-section-popular--left.png")
+      left: 0
+      top: 130px
+    &:after
+      width: 200px
+      height: 560px
+      background-image: url("../img/backgrounds/games-section-popular--right.png")
+      right: 0
+      top: 260px
+
+  &--new
+    &:before
+      width: 175px
+      height: 705px
+      background-image: url("../img/backgrounds/games-section-new--left.png")
+      left: 0
+      top: 175px
+    &:after
+      width: 225px
+      height: 635px
+      background-image: url("../img/backgrounds/games-section-new--right.png")
+      right: 0
+      top: 150px
+
+  &--recommended
+    &:before
+      width: 220px
+      height: 730px
+      background-image: url("../img/backgrounds/games-section-recommended--left.png")
+      left: 0
+      top: 105px
+    &:after
+      width: 185px
+      height: 680px
+      background-image: url("../img/backgrounds/games-section-recommended--right.png")
+      right: 0
+      top: 130px
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1700px)
+  .games__section--popular,
+  .games__section--new,
+  .games__section--recommended
+    &:before,
+    &:after
+      display: none
+
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1220px)
+  .games__section
+    padding-left: 25px
+    padding-right: 25px
+
+    /* bg */
+    &--new,
+    &--recommended
+      background-image: none
+
+    /* x-pro */
+    &--x-pro
+      padding-left: 30px
+      padding-right: 30px
+
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 768px)
+  .games__section
+    &-heading:before
+      width: 52px
+      height: 52px
+
+    /* x-pro */
+    &--x-pro
+      padding-left: 25px
+      padding-right: 25px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 580px)
+  .games__section
+    padding-left: 10px
+    padding-right: 10px
+
+    &-heading
+      font-size: 18px
+      line-height: 20px
+
+      &:before
+        width: 36px
+        height: 36px
+
+    &-button
+      padding-top: 30px

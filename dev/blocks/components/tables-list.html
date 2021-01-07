@@ -1,0 +1,14 @@
+<!-- Список игр xpro -->
+<ul class="tables__list" data-lazy>
+	{% for item in range(0, 6) %}
+	{{ block("elements/table-item") }}
+	{% endfor %}
+
+	{% for item in range(0, 5) %}
+	{{ block("elements/table-item-offline") }}
+	{% endfor %}
+
+	{% for item in range(0, 1) %}
+	{{ block("elements/table-item") }}
+	{% endfor %}
+</ul>

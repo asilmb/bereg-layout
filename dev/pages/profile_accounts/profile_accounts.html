@@ -1,0 +1,20 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+
+{% block content %}
+
+<div class="page page-profile">
+	{{ block("components/menu/profile-menu") }}
+	<section class="page-profile__content page-profile__content--accounts">
+		<div class="profile-accounts__wrapper">
+			<h1 class="page__title">Касса</h1>
+			{{ block("components/menu/profile-payments-menu") }}
+			<div class="profile-accounts__button">
+				<a data-modal href="/pages/modals/profile_add_account/profile_add_account.html" class="button button--w210 button--filled">Add Account</a>
+			</div>
+			{{ block("components/profile-accounts") }}
+		</div>
+	</section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+/* ----- TOP MENU ----------------------------------------------------------- */
+.header-top-menu
+	display: flex
+	height: 100%
+	width: 100%
+	margin-left: -10px
+
+	& .menu-item
+		text-align center
+
+		/* move icon fron li to link */
+		&:before
+			display: none
+
+		&:not(:last-of-type)
+			margin-right: 20px
+
+		& > a
+			height: 50px
+			display flex
+			justify-content: flex-start
+			align-items center
+			height: 100%
+			color: var(--primary-accent-lighter)
+			font-size: 12px
+			line-height: 14px
+			white-space: nowrap
+			padding: 10px
+			transition $t-color
+			position: relative
+			cursor pointer
+
+		/* icons */
+		& > a:before
+			font-family "iconfont"
+			speak none
+			-webkit-font-smoothing antialiased
+			-moz-osx-font-smoothing grayscale
+			font-style normal
+			font-variant normal
+			font-weight normal
+			text-decoration none
+			text-transform none
+			color: var(--primary-accent-darker)
+			font-size: 14px
+			margin-right 5px
+			margin-top: -5px
+			transition $t-color
+
+		&.icon-help > a:before
+			content "\E017"
+		&.icon-news > a:before
+			content "\E01E"
+		&.icon-rules > a:before
+			content "\E023"
+		&.icon-promotions > a:before
+			content "\E021"
+
+		// ----- hover & active ----------------------------------------------------
+		&:hover > a,
+		&:hover > a:before,
+		&.сurrent-menu-item > a,
+		&.сurrent-menu-item > a:before
+			color: var(--primary-accent)

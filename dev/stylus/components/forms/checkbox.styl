@@ -1,0 +1,91 @@
+/***
+*
+* Стилизация input type="checkbox"
+*
+***/
+.checkbox
+	text-align left
+
+	input[type="checkbox"]
+		display: none
+		height: 0
+		visibility: hidden
+
+		& + label
+			min-height 20px
+			display inline-block
+			width auto
+			font-size: 14px
+			line-height 20px
+			color: var(--primary-accent)
+			padding-left 30px
+			position: relative
+			cursor pointer
+
+			&::before
+				content ''
+				position: absolute
+				top 50%
+				left 0
+				width 20px
+				height: 20px
+				border 1px solid var(--primary-accent)
+				border-radius 4px
+				transform translateY(-50%)
+				transition: .3s ease-out
+
+			&::after
+				content ''
+				position absolute
+				top 50%
+				left 4px
+				width 12px
+				height 7px
+				margin-top -2px
+				border-bottom 2px solid transparent
+				border-left 2px solid transparent
+				transform translateY(-50%) rotate(-45deg)
+				outline none
+				transition 0.3s
+
+		&:checked + label::before
+			background-color var(--primary-accent)
+			border-color var(--primary-accent)
+
+		&:checked + label::after
+			border-color var(--primary-accent-complimentary)
+
+		&:disabled + label
+			opacity: .5
+			cursor default
+		&:disabled + label:after
+			border-color var(--color-surface)
+		&:disabled + label:before
+			background-color var(--disable-color)
+			border-color var(--disable-color)
+
+	& a
+		text-decoration: none
+		color var(--primary-accent-lighter)
+		margin 0 5px
+
+		&:hover
+			text-decoration: underline
+
+	&--reverted
+		input[type="checkbox"]
+			& + label
+				padding-left 0
+				padding-right 35px
+
+				&:before
+					right: 0
+					left: auto
+
+				&:after
+					right: 4px
+					left: auto
+
+/* error for checkbox */
+.form__input.error.checkbox input[type="checkbox"] + label::before
+	border-color: $color-error

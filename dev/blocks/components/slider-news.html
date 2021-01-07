@@ -1,0 +1,20 @@
+<section class="slider-news__section">
+	<div class="container">
+		<h2 class="slider-news__section-heading">Новости</h2>
+
+		<div class="slider-news" data-news-slider data-lazy>
+			<div class="swiper-container">
+				<ul class="swiper-wrapper">
+					{% for item in range(0, 10) %}
+					{{ block("elements/news-slider-item") }}
+					{{ block("elements/news-slider-item--2") }}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="slider-news__section-button">
+			<a href="/pages/news/news.html" class="button button--w210 button--filled">See all</a>
+		</div>
+	</div>
+</section>

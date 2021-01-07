@@ -1,0 +1,162 @@
+// -----------------------------------------------
+// Base
+// -----------------------------------------------
+body
+	color: var(--primary-accent-complimentary)
+	background-color: var(--color-surface)
+
+	&.fixed
+		overflow: hidden
+		height: 100vh
+
+	&.blur,
+	&.header-search
+		& .main
+			filter blur(3px)
+			transition all .3s ease-out
+
+.helper
+	margin-top: 144px
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	min-height: 100vh
+
+	& main.main
+		flex-grow: 1
+
+.section
+	width 100%
+	padding 40px 0
+
+	&--jackpots
+		width 100%
+		margin auto
+		background-color $color-background
+
+	&__header
+		position relative
+		display flex
+		justify-content space-between
+		align-items center
+		flex-wrap wrap
+		width 100%
+		border-bottom 1px solid
+		border-color $color-grey
+		margin-bottom 25px
+		padding-bottom 20px
+		& .button
+			position absolute
+			right 0
+			z-index 1
+		& .read-more__link
+			display flex
+			color var(--primary-accent)
+			font-size $font-size-bigger
+			& i
+				margin-right 10px
+				font-size 19px
+			&:hover
+				color #ffffff
+
+	&__title
+		display flex
+
+		align-items center
+		width auto
+		margin-right 25px
+		margin-bottom 0
+		font-size 18px
+		font-weight 400
+		& i
+			font-size 30px
+			margin-right 10px
+	&__buttons
+		text-align center
+		margin-top 40px
+a, img
+	-webkit-user-drag none
+	-khtml-user-drag none
+	-moz-user-drag none
+	-o-user-drag none
+	user-drag none
+
+.hidden
+	display none
+
+// ----- IE fixes --------------------------------------------------------------
+.ieOff {
+	display: none;
+}
+.ie body {
+	width: 100vw !important;
+	height: 100vh !important;
+	overflow: hidden !important;
+
+	.ieOff {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 11111111;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		text-align: center;
+		background: #243F53;
+
+		&__content {
+			width: 100%;
+			max-width: 470px;
+			padding: 55px 40px;
+			max-height: 350px;
+			text-align: center;
+			background: #fff;
+		}
+
+		&__title {
+			margin-bottom: 40px;
+			font-size: 24px;
+			font-weight: normal;
+			line-height: 28px;
+			color: #243F53;
+		}
+
+		&__text {
+			margin-bottom: 30px;
+			font-size: 15px;
+			color: #212121;
+			text-align: center;
+		}
+
+		&-browsers {
+			display: flex;
+			justify-content: center;
+
+			&__item {
+				margin: 0 20px;
+
+				a {
+					font-size: 12px;
+					color: #196FA5;
+					text-align: center;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+
+			&__icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 50px;
+				height: 50px;
+				padding-bottom: 10px;
+			}
+		}
+	}
+}

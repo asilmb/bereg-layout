@@ -1,0 +1,28 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+{% block content %}
+
+<!-- --- Main slider ------------------------------------------------------- -->
+{{ block("components/slider-main") }}
+
+<div class="page page-games">
+	<!-- --- Games types slider ---------------------------------------------- -->
+	{{ block("components/menu/games-menu-simple") }}
+
+	<!-- --- Games list + title + pagination --------------------------------- -->
+	<section class="games__section">
+		<div class="container">
+			<h2 class="games__section-heading">Recommended games</h2>
+
+			{{ block("components/games-list") }}
+
+			<div class="games__section-pagination">
+				{{ block("components/pagination")}}
+			</div>
+		</div>
+	</section>
+
+	<!-- --- Seo text -------------------------------------------------------- -->
+	{{ block("components/seo-text") }}
+</div>
+{% endblock %}

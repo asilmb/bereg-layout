@@ -1,0 +1,63 @@
+.profile-accounts
+
+	&__wrapper .page__title
+		width: 100%
+		max-width: 1295px
+		padding-left: 30px
+		padding-right: 30px
+		margin: 45px auto 10px
+		position: relative
+
+		/* gold line on top */
+		&:after
+			content: ""
+			height: 2px
+			background-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(222,175,118,0.5) 25%, #DCA96B 50%, rgba(222,175,118,0.5) 75%, rgba(0,0,0,0) 100%);
+			position: absolute
+			top: -5px
+			left: 0
+			right: 0
+			pointer-events: none
+			z-index: 1
+
+	/* new variant: table */
+	&__table
+		width: 100%
+		max-width: 1295px
+		padding: 0 30px
+		margin: 0 auto
+
+	/* add account button */
+	&__button
+		width: 100%
+		display: flex
+		justify-content: center
+		padding-top: 15px
+		padding-bottom: 15px
+		margin-bottom: 15px
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1024px)
+	.profile-accounts
+		&__wrapper .page__title
+			padding-left: 10px
+			padding-right: 10px
+			margin-top: 40px
+
+		&__table
+			padding: 0 10px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 580px)
+	.profile-accounts
+		&__wrapper .page__title
+			padding-left: 20px
+			padding-right: 20px
+			margin-top: 20px
+
+		&__table
+			padding: 0 20px
+
+		&__button
+			margin-bottom: 20px

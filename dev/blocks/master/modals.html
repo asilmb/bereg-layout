@@ -1,0 +1,90 @@
+{% macro checkStatus(status) %}
+{% if status == "error" %}
+{% set statusClass = "error" %}
+{{ statusClass }}
+{% elif status == "success" %}
+{% set statusClass = "success" %}
+{{ statusClass }}
+{% endif %}
+{% endmacro %}
+
+{% macro fieldText(name, label, placeholder, statusText, status) %}
+<div class='form__input {{checkStatus(status)}}'>
+	<label for="{{name}}">{{label}}</label>
+	<input type="text" id="{{name}}" placeholder="{{ placeholder }}">
+	<div class="form__error-message">{{ statusText }}</div>
+</div>
+{% endmacro %}
+
+{% macro fieldPassword(name, label, placeholder, statusText, status) %}
+<div class="form__input {{checkStatus(status)}}">
+	<label for="{{name}}">{{label}}</label>
+	<input type="password" id="{{ name }}" placeholder="{{ placeholder }}">
+	<div class="form__error-message">{{ statusText }}</div>
+	<span class="pass-switch icon-view" data-password-toggler=""></span>
+</div>
+{% endmacro %}
+
+{% macro fieldEmail(name, label, placeholder, statusText, status) %}
+<div class="form__input {{checkStatus(status)}}">
+	<label for="{{name}}">{{label}}</label>
+	<input type="email" id="{{ name }}" placeholder="{{ placeholder }}">
+	<div class="form__error-message">{{ statusText }}</div>
+</div>
+{% endmacro %}
+
+{% macro fieldCode(name, label, placeholder, imageURL, statusText, status) %}
+<div class="form__input form__input--captcha{{checkStatus(status)}}">
+	<div class="captcha">
+		<input type="text" id="{{ name }}" placeholder="{{ placeholder }}">
+		<div class="captcha__img">
+			<img src="{{ imageURL }}" alt="captcha">
+		</div>
+		<a href="javascript:void(0)" class="captcha__reload icon-refresh"></a>
+	</div>
+	<div class="form__error-message">{{ statusText }}</div>
+</div>
+{% endmacro %}
+
+{% macro fieldCheckbox(name, label, statusText, status) %}
+<div class="form__input  checkbox {{checkStatus(status)}}">
+	<input type="checkbox" id="{{ name }}">
+	<label for="{{ name }}">{{ label | safe }}</label>
+	<div class="form__error-message">{{ statusText }}</div>
+</div>
+{% endmacro %}
+
+{% macro fieldSelect(name, label, options, statusText, status) %}
+<div class="form__input {{checkStatus(status)}}">
+	<label for="{{ name }}">{{ label }}</label>
+	<select id="{{ name }}" data-select-menu>
+		{% for option in options %}
+		<option>{{ option }}</option>
+		{% endfor %}
+	</select>
+	<div class="form__error-message">{{ statusText }}</div>
+</div>
+{% endmacro %}
+
+
+{% macro fieldTextarea(name, label, placeholder, statusText, status) %}
+<div class="form__input {{checkStatus(status)}}">
+	<textarea id="{{ name }}" placeholder="{{ placeholder }}"></textarea>
+	<div class="form__error-message">{{ statusText }}</div>
+</div>
+{% endmacro %}
+
+{% macro buttonSubmit(size, type, content) %}
+<button type="submit" class="button button--{{size}} button--{{type}}">{{content}}</button>
+{% endmacro %}
+
+{% macro buttonLink(size, type, t3type, href, content, dataModal) %}
+<a href="{{href}}" class="button button--{{size}} button--{{type}} button--{{t3type}}" {{dataModal}}>{{content}}</a>
+{% endmacro %}
+
+{% macro block(name) %}
+{% include name + ".html" %}
+{% endmacro %}
+
+{% block content %}
+{% endblock %}

@@ -1,0 +1,228 @@
+.transactions
+	/* ----- wrappers & inners & description ---------------------------------- */
+	&__wrapper .page__title
+		width: 100%
+		max-width: 1495px
+		padding-left: 130px
+		padding-right: 130px
+		margin: 45px auto 10px
+		position: relative
+
+		/* gold line on top */
+		&:after
+			content: ""
+			height: 2px
+			background-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(222,175,118,0.5) 25%, #DCA96B 50%, rgba(222,175,118,0.5) 75%, rgba(0,0,0,0) 100%);
+			position: absolute
+			top: -5px
+			left: 0
+			right: 0
+			pointer-events: none
+			z-index: 1
+
+	&__inner
+		width: 100%
+		max-width: 1495px
+		padding-left: 130px
+		padding-right: 130px
+		margin: 45px auto
+
+	&__desc
+		font-size: 14px
+		line-height: 1.5
+		color: var(--primary-accent)
+		padding-top: 15px
+
+	/* ----- list & items ----------------------------------------------------- */
+	&__list
+		width: 100%
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		padding-top: 40px
+
+		@supports (display: grid)
+			display: grid
+			grid-template-columns: repeat(4,1fr)
+			grid-gap: 25px
+
+	&__item
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: center
+		background-color: var(--secondary-accent)
+		padding: 15px 0 35px
+		border-radius: 10px
+		overflow: hidden
+
+		@supports (display: grid)
+			width: unset
+			margin: unset
+
+		&-img
+			display: flex
+			align-items: center
+			justify-content: center
+			max-width: 210px
+			height: 75px
+			margin: 0 auto 10px
+
+			& img
+				height: 100%
+				width: 100%
+				object-fit: contain
+				object-position: center
+
+		&-description
+			flex-grow: 1
+			font-size: 14px
+			line-height: 1.5
+			color: var(--secondary-accent-darker)
+			text-align: left
+			background-color: var(--primary-accent)
+			padding: 15px 20px
+			margin-bottom: 30px
+
+			& p
+				margin: 0
+
+				&:not(:last-child)
+					margin-bottom: 5px
+
+			&-limits
+				color: var(--color-surface)
+				margin-top: 25px
+				margin-bottom: 5px
+
+		&-button.button
+			max-width: 100%
+
+	/* ----- notes: deposit list ---------------------------------------------- */
+	&__notes
+		width: 100%
+		background-color: var(--secondary-accent)
+		padding: 25px 0 30px
+		margin-top: 80px
+
+		&-inner
+			width: 100%
+			max-width: 1495px
+			padding-left: 90px
+			padding-right: 90px
+			display: flex
+			justify-content: center
+			align-items: flex-start
+			margin: 0 auto
+
+		&-item
+			width: calc(100% / 3 - 80px)
+			margin: 0 40px
+
+			&-icon
+				display: block
+				width: 88px
+				height: 88px
+				object-fit: contain
+				margin: 0 auto 10px
+
+			&-heading
+				font-size: 16px
+				line-height: 1.5
+				color: var(--primary-accent-lighter)
+				text-align: left
+				margin-bottom: 5px
+
+			&-text
+				font-size: 14px
+				line-height: 1.5
+				margin-bottom: 0
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1220px)
+	.transactions
+		&__list
+			@supports (display: grid)
+				grid-template-columns: repeat(3,1fr)
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1024px)
+	.transactions
+		&__wrapper .page__title
+			padding-left: 90px
+			padding-right: 90px
+			margin-top: 40px
+
+		&__inner
+			padding: 0 90px
+			margin-top: 35px
+			margin-bottom: 35px
+
+		&__list
+			padding-top: 30px
+
+			@supports (display: grid)
+				grid-template-columns: repeat(2,1fr)
+
+		&__notes
+			&-inner
+				padding-left: 80px
+				padding-right: 80px
+
+			&-item
+				width: calc(100% / 3 - 20px)
+				margin: 0 10px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 710px)
+	.transactions
+		&__wrapper .page__title
+			padding-left: 50px
+			padding-right: 50px
+
+		&__inner
+			padding: 0 50px
+
+		&__notes
+			&-inner
+				flex-direction: column
+				padding-left: 50px
+				padding-right: 50px
+
+			&-item
+				width: 100%
+				margin: 0
+
+				&:not(:last-child)
+					margin-bottom: 30px
+
+				&-heading,
+				&-text
+					text-align: center
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 580px)
+	.transactions
+		&__wrapper .page__title
+			padding-left: 20px
+			padding-right: 20px
+			margin-top: 20px
+
+		&__inner
+			padding: 0 20px
+			margin-top: -5px
+			margin-bottom: 0
+
+		&__desc
+			text-align: center
+
+		&__list
+			padding-top: 10px
+
+			@supports (display: grid)
+				grid-template-columns: repeat(1 ,1fr)
+
+		&__notes-inner
+			padding-left: 20px
+			padding-right: 20px

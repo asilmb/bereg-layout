@@ -1,0 +1,46 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+
+{% block content %}
+
+<div class="page page-profile">
+	{{ block("components/menu/profile-menu") }}
+	<section class="page-profile__content page-profile__content--user">
+		<h1 class="profile__title">Профиль</h1>
+
+		<div class="profile-info">
+			<!-- left part ------------------------------------------------------- -->
+			<div class="profile-info__left">
+				{{ block("components/form-avatar")}}
+				<div class="profile-info__extra">
+
+					<div class="profile-info__loyalty">
+						<div class="profile-info__loyalty-heading">Уровень лояльности:</div>
+						<div class="profile-info__loyalty-value">12</div>
+					</div>
+
+					<div class="profile-info__loyalty">
+						<div class="profile-info__loyalty-heading">Очки опыта:</div>
+						<div class="profile-info__loyalty-value">5 387 210</div>
+					</div>
+
+					<div class="profile-info__id">
+						<div class="profile-info__id-heading">Casino ID:</div>
+						<div  class="profile-info__id-value">1223432</div>
+					</div>
+
+					<div class="profile-info__socials">
+						<p class="profile-info__socials-text">Чтобы отвязать или привязать аккаунт — нажмите на иконку</p>
+						{{ block("components/socials-auth")}}
+					</div>
+				</div>
+			</div>
+			<!-- right part ------------------------------------------------------- -->
+			<div class="profile-info__right">
+				{{ block("components/form-profile")}}
+			</div>
+		</div>
+	</section>
+</div>
+
+{% endblock %}

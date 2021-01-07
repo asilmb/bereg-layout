@@ -1,0 +1,27 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+
+{% block content %}
+
+<div class="page page-profile">
+	{{ block("components/menu/profile-menu") }}
+	<section class="page-profile__content page-profile__content--transactions-history">
+		<div class="transactions-history__wrapper">
+			<h1 class="page__title">Касса</h1>
+			{{ block("components/menu/profile-payments-menu") }}
+			<div class="transactions-history__inner">
+				<div class="transactions-history__controls">
+					<div class="transactions-history__last-date">Last deposit 19.06.2020</div>
+					<ul class="transactions-history__tabs tabs">
+						<li data-history-deposit class="active">Deposit</li>
+						<li data-history-withdraw>Withdraw</li>
+					</ul>
+					{{ block("components/view-switcher")}}
+				</div>
+				{{ block("components/transactions-history") }}
+			</div>
+		</div>
+	</section>
+</div>
+
+{% endblock %}

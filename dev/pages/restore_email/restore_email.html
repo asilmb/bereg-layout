@@ -1,0 +1,23 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+
+{% block content %}
+
+<div class="page page-notification">
+	<div class="container">
+		<div class="page-notification__inner">
+			<div class="page-notification__img">
+				<img src="/img/notifications/notification--restore-processed.png" alt="">
+			</div>
+			<h1 class="page-notification__title">Запрос обработан!</h1>
+			<div class="page-notification__description">
+				<p>На ваш почтовый ящик было выслано письмо<br> с ссылкой на востанвления пароля</p>
+			</div>
+			<div class="page-notification__buttons">
+				<a href="/pages/index/index.html" class="button button--w280 button--filled">Go main</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

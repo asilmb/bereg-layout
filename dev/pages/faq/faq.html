@@ -1,0 +1,13 @@
+{% extends "master/master.html" %}
+{% block content %}
+
+<div class="page page-article">
+  <article class="article">
+    <h1 class="article__title">FAQ</h1>
+    <div class="article__faq">
+      {{ block("components/faq") }}
+    </div>
+  </article>
+</div>
+
+{% endblock %}

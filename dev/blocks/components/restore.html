@@ -1,0 +1,39 @@
+<!-- Компонент. Ввод нового пароля при восстановлении -->
+<form method="post" action="#" class="form form--restore">
+	<fieldset class="form__section form__section--inputs">
+		<div class="form__input">
+			<label class="form__input-label" for="update-password">Новый пароль</label>
+			<input type="password" id="update-password" placeholder="Введите новый пароль">
+			<span class="pass-switch icon-view" data-password-toggler></span>
+			<div class="form__error-message">Заполните поле "Новый пароль"</div>
+		</div>
+		<div class="form__input">
+			<label class="form__input-label" for="update-password-repeat">Повторите пароль</label>
+			<input type="password" id="update-password-repeat" placeholder="Введите пароль повторно">
+			<span class="pass-switch icon-view" data-password-toggler></span>
+			<div class="form__error-message">Заполните поле "Повторите пароль"</div>
+		</div>
+  </fieldset>
+
+	<fieldset class="form__section form__section--captcha">
+		<div class="form__input form__input--captcha">
+			<label class="form__input-label" for="login-captcha">Код</label>
+			<div class="captcha">
+				<input type="text" id="login-captcha" placeholder="Введите код">
+				<div class="captcha__img">
+					<img src="../../img/components/captcha/captcha.png" alt="captcha">
+				</div>
+				<a href="javascript:void(0)" class="captcha__reload icon-refresh"></a>
+			</div>
+			<div class="form__error-message">Заполните поле "Код"</div>
+		</div>
+		<div class="captcha__wrapper">
+			<img src="../../img/components/captcha/captcha-placeholder.jpg" alt="captcha">
+		</div>
+	</fieldset>
+
+	<fieldset class="form__section form__section--submit">
+		<button type="submit" class="button button--filled">Sign in</button>
+		<a href="#" class="link link--primary link--back"><i class="icon-arrow-left"></i>Вернуться назад</a>
+	</fieldset>
+</form>

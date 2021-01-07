@@ -1,0 +1,52 @@
+<!-- Компонент. Форма Обратной связи -->
+<form method="post" action="#" class="form form--contacts">
+	<fieldset class="form__section form__section--inputs">
+		<div class="form__input">
+			<label class="form__input-label" for="update-login">Имя</label>
+			<input type="text" id="update-login" placeholder="Введите Ваше имя">
+			<div class="form__error-message">Вы должны заполнить поле "Имя"</div>
+		</div>
+		<div class="form__input">
+			<label class="form__input-label" for="update-email">E-mail</label>
+			<input type="text" id="update-email" placeholder="Введите e-mail">
+			<div class="form__error-message">Вы должны заполнить поле "E-mail"</div>
+		</div>
+		<div class="form__input form__input--select">
+			<label class="form__input-label" for="update-currency">Раздел</label>
+			<select id="update-currency" data-select-menu>
+				<option>Выберите раздел</option>
+				<option>Авторизация</option>
+				<option>Пополнение баланса</option>
+				<option>Технические вопросы</option>
+				<option>Другое</option>
+			</select>
+			<div class="form__error-message">You must fill in the field</div>
+		</div>
+		<div class="form__input form__input--textarea">
+			<label class="form__input-label" for="update-text">Текст сообщения</label>
+			<textarea id="update-text" placeholder="Введите Ваш текст"></textarea>
+			<div class="form__error-message">Вы должны заполнить поле "Текст сообщения"</div>
+		</div>
+	</fieldset>
+
+	<fieldset class="form__section form__section--captcha">
+		<div class="form__input form__input--captcha">
+			<label class="form__input-label" for="update-captcha">Код</label>
+			<div class="captcha">
+				<input type="text" id="update-captcha" placeholder="Введите код">
+				<div class="captcha__img">
+					<img src="../../img/components/captcha/captcha.png" alt="captcha">
+				</div>
+				<a href="javascript:void(0)" class="captcha__reload icon-refresh"></a>
+			</div>
+			<div class="form__error-message">Заполните поле "Код"</div>
+		</div>
+		<div class="captcha__wrapper">
+			<img src="../../img/components/captcha/captcha-placeholder.jpg" alt="captcha">
+		</div>
+	</fieldset>
+
+	<fieldset class="form__section form__section--submit">
+		<button type="submit" class="button button--filled">Cоздать аккаунт</button>
+	</fieldset>
+</form>

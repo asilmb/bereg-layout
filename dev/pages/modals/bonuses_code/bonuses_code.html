@@ -1,0 +1,18 @@
+{% extends "master/modals.html" %}
+{% block content %}
+
+<div class="bonuses__img">
+	<img src="/img/elements/modals-bonus.svg" alt="">
+</div>
+<h3>Code bonus</h3>
+<p>To receive the bonus, enter the activation code</p>
+<form method="post" action="#" class="form form--modal">
+	<fieldset class="form__section">
+		{{ fieldText("text", "", "Amount", "", "") }}
+	</fieldset>
+	<p>Attention!<br> You have three attempts to enter the bonus activation code. <br>After the third attempt, the Bonus will be blocked for you</p>
+	<fieldset class="form__section form__section--submit">
+		<button class="button button--260 button--filled">Take</button>
+	</fieldset>
+</form>
+{% endblock %}

@@ -1,0 +1,192 @@
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+@media all and (max-width: 580px)
+	// ---------------------------------------------------------------------------
+	// ----- common PAGES styles -------------------------------------------------
+	// ---------------------------------------------------------------------------
+	.page
+
+		&-game
+			padding-top: 50px
+
+		/* primary heading on page */
+		&__header
+			padding-top: 50px
+
+	// ------ FORMS: login + reg + update data -----------------------------------
+	.form__plate
+		box-shadow: none
+
+		&-heading
+			max-width: 100%
+			word-break: break-word
+			margin-left: 0
+			margin-right: 0
+
+	.page__title
+		word-break: break-word
+
+	// ----- JACKPOTS & WINNERS section / MAIN page ------------------------------
+	.jackpots-winners__section
+		box-shadow: none
+		background-color: transparent
+
+		&-container
+			padding-top: 40px
+			padding-bottom: 0
+
+		&-inner
+			margin-bottom: 20px
+
+	.winners,
+	.jackpots
+		&__title
+			font-size: 18px
+			line-height: 1.5
+			margin-bottom: 10px
+
+		&__item
+			width: 280px
+
+			&:not(:last-child)
+				margin-bottom: 20px
+
+	.jackpots__item
+		padding: 0 20px
+
+		&-icon
+			width: 45px
+			height: 60px
+
+		&-value
+			font-size: 24px
+
+		&:after
+			display: none
+
+	.winners__item
+		&-left
+			padding-left: 15px
+		&-right
+			padding-right: 15px
+
+
+
+	// ----- LOYALTY page --------------------------------------------------------
+	.loyalty
+
+		&__list
+			padding-left: 0
+			padding-right: 0
+
+	// ----- PRROFILE: BONUSES / history -----------------------------------------
+	.page-profile__content .bonuses__list,
+	.shop__list
+		grid-template-columns: repeat(1,1fr)
+
+	// ----- ONE BONUS (bonuses info) page ---------------------------------------
+	.bonus-info
+		width: auto
+		box-shadow: none
+		margin-left: -20px
+		margin-right: -20px
+
+		&__header
+			height: 190px
+			padding: 15px
+
+		&__content
+			padding: 30px
+
+		&__title
+			font-size: 16px
+			line-height: 20px
+			padding: 35px 5px
+
+		&__description
+			font-size: 16px
+			line-height: 23px
+			padding: 35px 10px
+
+			& li:not(:last-child)
+				margin-bottom: 15px
+
+	// ----- TOURNAMENTS ---------------------------------------------------------
+	.tournament
+		&__date
+			width 100%
+			&--wrapper
+				width 100%
+		&__time
+			width 100%
+		&__info
+			height auto
+			padding 10px
+			h3
+				font-size 24px
+				margin 10px 0 15px 0
+		&__point
+			width 100%
+			margin 20px 0
+		&__button
+			text-align center
+			margin-top 5px
+			.button
+				margin 0 auto
+
+	// ------ FOOTER -------------------------------------------------------------
+	.footer
+		border-top-width: 8px
+
+		&__layout--top
+			padding-top: 40px
+			padding-bottom: 0
+
+		&__menu
+			width: 100%
+			order: 2
+			margin-left: 0
+			margin-right: auto
+
+			&-wrapper
+				flex-direction: column
+
+			&:last-child
+				width: 100%
+
+			&--social
+				order: 1
+				min-width: 100%
+				max-width: none
+				margin: 0 auto 20px
+
+			&--social &-title
+				width: 100%
+				text-align: center
+
+		&__currency-icons
+			&-list
+				padding-top: 0
+				margin-top: -5px
+				margin-left: -15px
+				margin-right: -15px
+
+			&-link
+				margin-left: 0
+				margin-right: 0
+				margin-bottom: 0
+
+		&-providers
+			padding-bottom: 15px
+
+			&__list-item
+				width: calc(100% / 3)
+
+	.socials__list--footer
+		width: auto
+		margin-left: -20px
+		margin-right: -20px
+
+		& .socials__item
+			max-width: calc(100% / 5)

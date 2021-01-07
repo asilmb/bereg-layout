@@ -1,0 +1,171 @@
+// -----------------------------------------------
+// Module - Footer
+// -----------------------------------------------
+
+.footer
+	border-top: 10px solid var(--primary-accent)
+	background-color var(--color-surface)
+	padding-bottom: 60px
+
+	&__title
+		width 100%
+		text-align center
+		margin-bottom 60px
+
+	&__layout
+		max-width: 1385px
+		width: 100%
+		display: flex
+		flex-direction: column
+		align-items: center
+		padding: 0 60px
+		margin: 0 auto
+
+		&--top
+			display: flex
+			justify-content: space-between
+			width: 100%
+			padding-top: 75px
+			padding-bottom: 65px
+
+		&--bottom
+			width auto
+
+		&--currency
+			width 100%
+			margin-bottom 20px
+
+	//----------------------------------------------------------------------------
+	&__menu
+		display: flex
+		flex-direction: column
+		flex-wrap: wrap
+		align-items: flex-start
+		min-width: 180px
+		font-family: var(--font-secondary)
+		margin-right: 25px
+
+		&--social
+			min-width: inherit
+			max-width: 180px
+			margin-right: -30px
+
+		&-wrapper
+			display flex
+			justify-content space-between
+			width: 100%
+
+		&-title
+			font-size: 18px
+			line-height: 23px
+			color var(--primary-accent)
+			text-transform: uppercase
+			margin-bottom 10px
+
+		&-list
+			display: flex
+			flex-direction: column
+			flex-wrap: wrap
+			justify-content: space-around
+			width 100%
+
+		&-item
+			&:not(:last-of-type)
+				margin-bottom 10px
+
+			&-link
+				font-size 16px
+				line-height: 26px
+				color var(--primary-accent-complimentary)
+				transition: $t-color, $t-text-shadow
+				cursor: pointer
+
+			& &-link:hover,
+			&.active &-link
+				color: var(--primary-accent)
+				text-shadow: var(--primary-shadow)
+
+	//----------------------------------------------------------------------------
+	&__currency-icons
+		&-list
+			display: flex
+			justify-content: center
+			flex-wrap: wrap
+			padding-top: 10px
+
+		&-link
+			flex-shrink: 0
+			display: block
+			text-decoration: none
+			padding: 10px
+			margin-left: 25px
+			margin-right: 25px
+			margin-bottom: 10px
+			cursor: pointer
+
+			& img
+				width: 70px
+				height: 70px
+				object-fit: contain
+				filter: grayscale(0)
+				transition: $t-filter
+
+			&:hover img
+				filter: grayscale(1)
+
+	//----------------------------------------------------------------------------
+	&-providers
+		width: auto
+		margin-left: -25px
+		margin-right: -25px
+
+		&__list
+			width: 100%
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+
+			&-item
+				width: calc(100% / 8)
+
+				&-link
+					height: 100%
+					max-height: 100px
+					width 100%
+					display flex
+					justify-content center
+					align-items center
+					transition: $t-filter
+					cursor: pointer
+					filter: grayscale(1)
+
+					& img
+						height: 100%
+						width: 100%
+						object-fit contain
+						object-position: center
+
+					&:hover
+						filter: grayscale(0)
+
+	//----------------------------------------------------------------------------
+	&__copyright
+		width: 100%
+		max-width: 1190px
+		font-family: var(--font-secondary)
+		font-size: 16px
+		line-height: 28px
+		font-weight: 300
+		color: var(--primary-accent-complimentary)
+		text-align: center
+		margin: 0 auto
+
+		&-text p:last-child
+			margin-bottom: 0
+
+		& a
+			text-decoration: underline
+			cursor: pointer
+
+			&:hover
+				text-decoration: none

@@ -1,0 +1,57 @@
+<!-- Список бонусов в магазине -->
+
+<ul class="shop__list" data-lazy>
+
+	{% for item in range(0, 2) %}
+	<li class="shop__item">
+		<div class="shop__item-img">
+			<img data-src="/img/components/bonuses/bonus-gold.svg" alt="">
+		</div>
+		<div class="shop__item-content">
+			<h3 class="shop__item-title">Registration</h3>
+			<p class="shop__item-description">The iSoftBet developer invites players to the atmosphere of the classic “one-armed bandits” that filled the gambling halls many years ago.</p>
+		</div>
+		<a data-modal href="/pages/modals/bonuses_giveaway/bonuses_giveaway.html" class="button button--220 button--bordered">Receive</a>
+	</li>
+	{% endfor %}
+
+	{% for item in range(0, 4) %}
+	<li class="shop__item">
+		<div class="shop__item-img">
+			<img data-src="/img/components/bonuses/bonus-red.svg" alt="">
+		</div>
+		<div class="shop__item-content">
+			<h3 class="shop__item-title">First Deposit</h3>
+			<p class="shop__item-description">The iSoftBet developer invites players to the atmosphere of the classic “one-armed bandits” that filled the gambling halls many years ago.</p>
+		</div>
+		<a data-modal href="/pages/modals/bonuses_giveaway/bonuses_giveaway.html" class="button button--220 button--bordered">Receive</a>
+	</li>
+	{% endfor %}
+
+	{% for item in range(0, 4) %}
+	<li class="shop__item">
+		<div class="shop__item-img">
+			<img data-src="/img/components/bonuses/bonus-brown.svg" alt="">
+		</div>
+		<div class="shop__item-content">
+			<h3 class="shop__item-title">Birthday Bonus</h3>
+			<p class="shop__item-description">The iSoftBet developer invites players to the atmosphere of the classic “one-armed bandits” that filled the gambling halls many years ago.</p>
+		</div>
+		<a data-modal href="/pages/modals/bonuses_giveaway/bonuses_giveaway.html" class="button button--220 button--bordered">Receive</a>
+	</li>
+	{% endfor %}
+
+	{% for item in range(0, 2) %}
+	<li class="shop__item">
+		<div class="shop__item-img">
+			<img data-src="/img/components/bonuses/bonus-blue.svg" alt="">
+		</div>
+		<div class="shop__item-content">
+			<h3 class="shop__item-title">First win</h3>
+			<p class="shop__item-description">The iSoftBet developer invites players to the atmosphere of the classic “one-armed bandits” that filled the gambling halls many years ago.</p>
+		</div>
+		<a data-modal href="/pages/modals/bonuses_giveaway/bonuses_giveaway.html" class="button button--220 button--bordered">Receive</a>
+	</li>
+	{% endfor %}
+
+</ul>

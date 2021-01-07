@@ -1,0 +1,45 @@
+//-----------------------------------------------
+// Component - Datepicker
+//-----------------------------------------------
+.datepicker,
+.datepicker--pointer
+  background-color: $input-background
+  border-color: $primary-gray
+
+.datepicker--nav
+  border-color: $primary-gray
+
+.datepicker--day-name,
+.datepicker--nav-title
+  color: $primary-gray
+
+.datepicker--cell,
+.datepicker--nav-action,
+.datepicker--nav-title,
+.datepicker--nav-title i
+  color: var(--primary-accent-complimentary)
+  transition: $t-color, $t-bg-color
+
+.datepicker--cell.-selected-,
+.datepicker--cell.-focus-,
+.datepicker--cell.-focus-.-selected-,
+.-selected-.datepicker--cell-day.-other-month-,
+.-selected-.datepicker--cell-year.-other-decade-,
+.datepicker--cell-day.-other-month-.-focus-,
+.datepicker--cell-year.-other-decade-.-focus-,
+.datepicker--nav-action:hover,
+.datepicker--nav-title:hover
+  background-color: var(--primary-accent)
+  color: $color-background
+
+.datepicker--cell.-disabled-,
+.datepicker--cell.-disabled-.-focus-,
+.datepicker--cell.-disabled-.-selected-,
+.datepicker--cell.-disabled-:hover
+  background-color: transparent
+  color: $primary-gray
+  cursor: default
+
+.datepicker--nav-title:hover,
+.datepicker--nav-title:hover i
+  color: var(--primary-accent-complimentary)

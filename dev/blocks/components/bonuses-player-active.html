@@ -1,0 +1,9 @@
+<!-- Активные бонусы игрока -->
+
+<ul class="bonuses__list  bonuses__list--player" data-lazy>
+	{% for item in range(0, 12) %}
+	{{ block("elements/bonus-player-active-item") }}
+	{% endfor %}
+</ul>
+
+{{ block("components/pagination")}}
