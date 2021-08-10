@@ -1,0 +1,17 @@
+{% extends "master/modals.html" %}
+{% block content %}
+
+<img src="/img/elements/modals-deposit.svg" alt="">
+<h3>Deposit</h3>
+<form method="post" action="#" class="form form--modal">
+	<fieldset class="form__section">
+		{{ fieldText("text", "", "Amount", "Error message", "") }}
+		{{ fieldCheckbox("no-bonus", "I don’t need bonus", "", "", "") }}
+	</fieldset>
+	<h4>No bonuses</h4>
+	<fieldset class="form__section form__section--submit">
+		<button type="submit" class="button button--280 button--filled">Deposit</button>
+	</fieldset>
+</form>
+
+{% endblock %}

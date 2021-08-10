@@ -1,0 +1,121 @@
+/***
+*
+* Стилизация input type="radio" + списки элементов в форме
+*
+***/
+.radio
+	&__item
+		display: flex
+		align-items: center
+
+		input[type="radio"]
+			display: none
+			visibility: hidden
+
+			&:checked + label:before
+				background-color: var(--secondary-accent)
+
+			&:checked + label:after
+				content ''
+				width: 8px
+				height: 8px
+				background: var(--primary-accent-lighter)
+				border-radius: 50%
+				position: absolute
+				top: 50%
+				left: 6px
+				transform translateY(-50%)
+			&:disabled + label
+				opacity: .5
+				cursor: default
+			&:disabled + label:after
+				background: var(--disable-color)
+			&:disabled + label:before
+				border-color: var(--disable-color)
+
+		input[type="radio"] + label
+			min-height: 20px
+			font-size: 14px
+			line-height: 20px
+			color: var(--primary-accent-lighter)
+			padding-left: 25px
+			position: relative
+			cursor pointer
+
+			&:before
+				content: ''
+				width 20px
+				height: 20px
+				border 2px solid var(--secondary-accent)
+				background-color: transparent
+				border-radius 50%
+				position: absolute
+				left: 0
+				top: 50%
+				transform translateY(-50%)
+				transition: $t-bg-color
+
+	& a
+		text-decoration: none
+		color var(--primary-accent-lighter)
+		margin 0 5px
+
+		&:hover
+			text-decoration: underline
+
+	// ----- group of radios -----
+	&__list
+		display: flex
+		flex-direction: row
+		justify-content: center
+		align-items: center
+		flex-wrap: wrap
+
+	&__list &__item
+		width: auto
+		margin: 5px
+
+	/* text */
+	&__list input[type="radio"] + &__item-label
+		font-size: 18px
+		line-height: 18px
+		padding-left: 50px
+		text-transform: uppercase
+		color: $color-grey
+		padding-top: 10px
+		padding-bottom: 10px
+
+		/* circle */
+		&:before
+			width: 38px
+			height: 38px
+			border-width: 3px
+
+	/* checked */
+	&__list input[type="radio"]:checked + &__item-label:after
+		width: 20px
+		height: 20px
+		background-image: url("../img/elements/circle-check.svg")
+		background-position: center
+		background-size: contain
+		background-repeat: no-repeat
+		background-color: transparent
+		top: 50%
+		left: 10px
+		transform: translateY(-50%)
+
+	/* text for vertical */
+	&__list--vertical input[type="radio"] + &__item-label
+		width: auto
+		padding: 55px 15px 0
+
+		/* circle */
+		&:before
+			left: 50%
+			top: 0
+			transform: translateX(-50%)
+
+	&__list--vertical input[type="radio"]:checked + &__item-label:after
+		top: 10px
+		left: 50%
+		transform: translateX(-50%)

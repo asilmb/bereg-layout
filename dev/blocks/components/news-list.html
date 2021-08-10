@@ -1,0 +1,7 @@
+<!-- News list -->
+<ul class="news__list" data-lazy>
+	{{ block("elements/news-short-item") }}
+	{% for item in range(0, 11) %}
+	{{ block("elements/news-item") }}
+	{% endfor %}
+</ul>

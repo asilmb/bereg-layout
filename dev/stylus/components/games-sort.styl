@@ -1,0 +1,53 @@
+.games-sort
+	display flex
+	justify-content: flex-start
+	align-items: center
+
+	&__heading
+		font-weight: 500
+		font-size: 18px
+		line-height: 1.5
+		letter-spacing: .05em
+		text-align: left
+		margin-right: 15px
+		margin-bottom: 0
+
+	&__params
+		display: flex
+		justify-content: flex-start
+		align-items: center
+
+		&-item
+			font-weight: 500
+			font-size: 18px
+			line-height: 1.5
+			letter-spacing: .05em
+			text-align: center
+			white-space: nowrap
+			padding: 25px 20px
+			position: relative
+			cursor: pointer
+
+			&:after
+				content: ""
+				height: 4px
+				width: 0
+				background-color: var(--primary-accent-lighter)
+				box-shadow: 0px 0px 14px var(--primary-accent-lighter)
+				position: absolute
+				left: 0
+				bottom: -1px
+				transition: width .2s ease-out
+
+			&:hover:after,
+			&.active:after
+				width: 100%
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 580px)
+	.games-sort
+		&__params-item
+			font-weight: 400
+			font-size: 14px
+			line-height: 1.5
+			padding: 20px 20px 10px

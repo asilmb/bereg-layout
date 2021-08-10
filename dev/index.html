@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Duke WP Casino</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,900&display=swap&subset=cyrillic-ext" rel="stylesheet">
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		html,
+		body {
+			height: 100%;
+			width: 100%;
+			font-size: 14px;
+			font-family: 'Roboto',sans-serif;
+		}
+		body {
+			background-color: rgba(0,0,0,.45);
+		}
+
+		section {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		@supports (display: grid) {
+			section {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+				grid-gap: 10px;
+				padding: 10px;
+			}
+		}
+		section div {
+			width: 32%;
+			margin: 0 1% 1% 0;
+			border: 1px solid rgba(0,199,69,1);
+			border-radius: 5px;
+			padding-bottom: 15px;
+			background-color: rgba(0, 0, 0, 0.5);
+			box-shadow: 0 5px 5px 0 rgba(0,0,0,.75);
+		}
+		@supports (display: grid) {
+			section div {
+				width: 100%;
+				margin: 0;
+			}
+		}
+
+		h2 {
+			font-size: 22px;
+			line-height: 30px;
+			font-family: "Roboto", sans-serif;
+			color: #ffffff;
+			font-weight: 500;
+			text-align: center;
+			text-shadow: 0 1px 1px rgba(0,0,0,.85);
+			letter-spacing: .05em;
+			border-bottom: 1px solid rgba(0,199,69,1);
+			padding-bottom: 10px;
+			padding-top: 10px;
+			margin: 0 10px 15px;
+		}
+
+		ul + h2 {
+			margin-top: 10px;
+		}
+
+		.btn-primary {
+			display: flex;
+			box-sizing: border-box;
+			width: 100%;
+			min-height: 40px;
+			font-size: 14px;
+			line-height: 14px;
+			font-family: "Roboto", sans-serif;
+			font-weight: 500;
+			text-align: center;
+			text-transform: uppercase;
+			color: white;
+			text-decoration: none;
+			border-radius: 2px;
+			padding: 0 10px;
+			background-color: #a80000;
+			box-shadow: 0 5px 5px 0 rgba(0,0,0,.75);
+			align-items: center;
+			margin: auto;
+			justify-content: center;
+			transition: background-color .2s ease-out, box-shadow .2s ease-out;
+			cursor: pointer;
+		}
+		.btn-primary.done {
+			background-color: rgba(0,199,69,.55);
+			transition: background-color .2s ease-out;
+		}
+		.btn-primary.done:hover {
+			background-color: rgba(0,199,69,1);
+		}
+
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 10px;
+		}
+		ul li {
+			margin: 0 1% 1% 0;
+		}
+
+		sup {
+			display: inline-block;
+			color: white;
+			font-weight: 300;
+			padding: 10px;
+			opacity: .75;
+		}
+		sup p {
+			padding: 5px 0;
+		}
+		sup span {
+			display: inline-block;
+			min-width: 10px;
+			text-align: center;
+		}
+
+		@supports (display: grid) {
+			ul {
+				display: grid;
+				grid-gap: 10px;
+				grid-template-columns: repeat(auto-fill, minmax(32%, auto));
+				margin: 0;
+			}
+		}
+
+		@media (max-width:580px) {
+			@supports (display: grid) {
+				section {
+					grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+				}
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+		<div>
+			<h2>Common pages</h2>
+			<ul>
+				<li><a href="pages/index/index.html" class="btn-primary done">Main page</a></li>
+				<li><a href="pages/index_logged/index_logged.html" class="btn-primary done">Main page logged</a></li>
+				<li><a href="pages/loyalty_program/loyalty_program.html" class="btn-primary">loyalty program</a></li>
+				<li><a href="pages/news/news.html" class="btn-primary done">News list</a></li>
+				<li><a href="pages/news_item/news_item.html" class="btn-primary done">News item</a></li>
+				<li><a href="pages/news_empty/news_empty.html" class="btn-primary done">⚬ News empty</a></li>
+			</ul>
+			<h2>Text pages</h2>
+			<ul>
+				<li><a href="pages/faq/faq.html" class="btn-primary done">FAQ</a></li>
+				<li><a href="pages/about/about.html" class="btn-primary done">About</a></li>
+				<li><a href="pages/terms/terms.html" class="btn-primary done">Terms</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2>Login</h2>
+			<ul>
+				<li><a href="pages/login/login.html" class="btn-primary done">: Login</a></li>
+				<li><a href="pages/login_taken/login_taken.html" class="btn-primary done">(x)⚬ Login taken</a></li>
+				<li><a href="pages/update-data/update-data.html" class="btn-primary done">: Update data</a></li>
+			</ul>
+			<h2>Registration</h2>
+			<ul>
+				<li><a href="pages/registration/registration.html" class="btn-primary done">: Registration</a></li>
+				<li><a href="pages/registration_success/registration_success.html" class="btn-primary done">⚬ Registration success</a></li>
+				<li><a href="pages/registration_email_confirm/registration_email_confirm.html" class="btn-primary done">: E-mail confirm form</a></li>
+				<li><a href="pages/registration_email_need_confirm/registration_email_need_confirm.html" class="btn-primary done">⚬ E-mail need confirm</a></li>
+				<li><a href="pages/registration_email_confirmed/registration_email_confirmed.html" class="btn-primary done">⚬ E-mail confirmed</a></li>
+				<li><a href="pages/registration_email_error/registration_email_error.html" class="btn-primary done">⚬ E-mail error</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2>Passowrd recovery</h2>
+			<ul>
+				<li><a href="pages/restore_request/restore_request.html" class="btn-primary done">: Restore request</a></li>
+				<li><a href="pages/restore_email/restore_email.html" class="btn-primary done">⚬ Restore processed</a></li>
+				<li><a href="pages/restore/restore.html" class="btn-primary done">: Restore</a></li>
+				<li><a href="pages/restore_success/restore_success.html" class="btn-primary done">⚬ Restore success</a></li>
+				<li><a href="pages/restore_duplication/restore_duplication.html" class="btn-primary done">⚬ Restore duplication</a></li>
+				<li><a href="pages/restore_link/restore_link.html" class="btn-primary done">⚬ Restore link</a></li>
+			</ul>
+			<h2>Contacts</h2>
+			<ul>
+				<li><a href="pages/contacts/contacts.html" class="btn-primary done">: Contacts</a></li>
+				<li><a href="pages/contacts_success/contacts_success.html" class="btn-primary done">⚬ Contacts success</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2>Games</h2>
+			<ul>
+				<li><a href="pages/games/games.html" class="btn-primary done">Games</a></li>
+				<li><a href="pages/gaming_tables/gaming_tables.html" class="btn-primary done">Games XPRO</a></li>
+				<li><a href="pages/game/game.html" class="btn-primary done">Game Page</a></li>
+				<li><a href="pages/game/game-logged.html" class="btn-primary done">Game Page Logged</a></li>
+				<li><a href="pages/games_currency_mismatch/games_currency_mismatch.html" class="btn-primary done">⚬ Games currency mismatch</a></li>
+				<li><a href="pages/games_empty/games_empty.html" class="btn-primary done">⚬ Games empty</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2>Bonuses</h2>
+			<ul>
+				<li><a href="pages/bonuses/bonuses.html" class="btn-primary">Bonuses</a></li>
+				<li><a href="pages/bonuses_info/bonuses_info.html" class="btn-primary">One bonus</a></li>
+				<li><a href="pages/bonuses_missing/bonuses_missing.html" class="btn-primary">⚬ Bonuses empty</a></li>
+				<li><a href="pages/bonuses_player/bonuses_player.html" class="btn-primary">+ Bonuses player</a></li>
+				<li><a href="pages/bonuses_history/bonuses_history.html" class="btn-primary">+ Bonuses history</a></li>
+				<li><a href="pages/bonuses_history_missing/bonuses_history_missing.html" class="btn-primary">⚬ Bonuses history empty</a></li>
+				<li><a href="pages/shop/shop.html" class="btn-primary">+ Shop</a></li>
+				<li><a href="pages/promo/promo.html" class="btn-primary done">Promo list</a></li>
+				<li><a href="pages/promo_item/promo_item.html" class="btn-primary done">Promo item</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2>Player pages</h2>
+			<ul>
+				<li><a href="pages/profile/profile.html" class="btn-primary done">+ Profile</a></li>
+				<li><a href="pages/profile_accounts/profile_accounts.html" class="btn-primary done">+ Profile: Accounts</a></li>
+				<li><a href="pages/profile_transaction_history/profile_transaction_history.html" class="btn-primary">+ Profile: transaction history</a></li>
+				<li><a href="pages/profile_transaction_history_empty/profile_transaction_history_empty.html" class="btn-primary">+ Profile: trans.history empty</a></li>
+				<li><a href="pages/messages/messages.html" class="btn-primary done">+ Profile: Messages</a></li>
+				<li><a href="pages/messages_empty/messages_empty.html" class="btn-primary done">+⚬ Profile: Messages Empty</a></li>
+				<li><a href="pages/message/message.html" class="btn-primary done">+ Profile: Message</a></li>
+				<!-- <li><a href="pages/empty/empty.html" class="btn-primary">+ Profile: Messages Empty</a></li> -->
+				<li><a href="pages/documents/documents.html" class="btn-primary done">+ Profile: Documents</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2>Payment methods</h2>
+			<ul>
+				<li><a href="pages/transactions_deposits/transactions_deposits.html" class="btn-primary done">+ Profile: Deposits</a></li>
+				<li><a href="pages/transactions_cashout/transactions_cashout.html" class="btn-primary done">+ Profile: Cashout</a></li>
+				<li><a href="pages/transaction_cashout_bonus/transaction_cashout_bonus.html" class="btn-primary done">⚬ Unplayed bonus</a></li>
+				<li><a href="pages/transactions_payment_success/transactions_payment_success.html" class="btn-primary done">⚬ Payment success</a></li>
+				<li><a href="pages/transactions_payment_error/transactions_payment_error.html" class="btn-primary done">⚬ Payment error</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2>Modals</h2>
+			<ul>
+				<li><a href="pages/modals/modals.html" class="btn-primary">Modals</a></li>
+			</ul>
+			<h2>Other stuff</h2>
+			<ul>
+				<li><a href="pages/error/error.html" class="btn-primary done">⚬ Error</a></li>
+				<!-- <li><a href="pages/tournament_list/tournament_list.html" class="btn-primary ">Tournament list</a></li> -->
+				<!-- <li><a href="pages/tournament_item/tournament_item.html" class="btn-primary ">Tournament item</a></li> -->
+			</ul>
+		</div>
+		<div>
+			<h2>Standalone pages & Components</h2>
+			<ul>
+				<li><a href="static_pages/error/error.html" class="btn-primary">/error</a></li>
+				<li><a href="static_pages/ddos/ddos.html" class="btn-primary">/DDoS</a></li>
+				<li><a href="static_pages/maintenance/maintenance.html" class="btn-primary">/maintenance</a></li>
+				<li><a href="static_pages/blocked/blocked.html" class="btn-primary">/blocked</a></li>
+				<li>
+					<sup>
+						<p><span>⚬</span> — notification page</p>
+						<p><span>+</span> — page with profile menu</p>
+						<p><span>:</span> — page with form</p>
+					</sup>
+				</li>
+				<li><a href="pages/__components/__components.html" class="btn-primary">Components</a></li>
+			</ul>
+		</div>
+	</section>
+
+</body>
+
+</html>

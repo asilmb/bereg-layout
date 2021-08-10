@@ -1,0 +1,227 @@
+.jackpots__section
+  padding-top: 15px
+  position: relative
+
+  /* gold dots on sides */
+  &:before,
+  &:after
+    content: ""
+    width: 225px
+    height: 920px
+    background-size: contain
+    background-repeat: no-repeat
+    background-image: url("../img/jackpots-winners/jackpots-dots.png")
+    position: absolute
+    top: 0
+    pointer-events: none
+
+  &:before
+    background-position: left center
+    left: 0
+
+  &:after
+    transform: scaleX(-1)
+    background-position: right center
+    right: 0
+
+  /* gold line on bottom */
+  & .container
+    position: relative
+
+    &:after
+      content: ""
+      height: 2px
+      background-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(222,175,118,0.5) 25%, #DCA96B 50%, rgba(222,175,118,0.5) 75%, rgba(0,0,0,0) 100%);
+      position: absolute
+      left: 0
+      right: 0
+      pointer-events: none
+      z-index: 1
+
+  &-heading
+    width: 100%
+    min-height: 60px
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    font-family: var(--font-secondary)
+    font-size: 24px
+    line-height: 24px
+    text-align: left
+    font-weight: 400
+    text-transform: none
+    margin-bottom: 0
+
+    &:before
+      content: ""
+      width: 57px
+      height: 57px
+      background-image: url("../img/backgrounds/games-section-title.png")
+      background-size: contain
+      background-repeat: no-repeat
+
+  &-slider
+    margin-top: -20px
+
+  &-button
+    text-align: center
+    padding-top: 15px
+    padding-bottom: 40px
+
+
+.slider-jackpots
+  position: relative
+
+  /* arrows */
+  & .slider-arrow--prev,
+  & .slider-arrow--next
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 145px
+    color: var(--primary-accent)
+    padding-bottom: 60px
+    position absolute
+    top: 0
+    bottom: 0
+    transform: none
+    cursor: pointer
+    z-index: 3
+
+    & i
+      font-size: 55px
+      transition: $t-text-shadow
+
+    &:hover i
+      text-shadow: var(--primary-shadow)
+
+    &.swiper-button-disabled
+      display: none
+
+  & .slider-arrow--prev
+    left: 0
+
+  & .slider-arrow--next
+    right: 0
+
+  /* slide stuff */
+  &__slide
+    height: 740px
+    width: 100%
+
+    &-image
+      height: 600px
+      margin-bottom: 30px
+      overflow: hidden
+
+      & img
+        width: 100%
+        height: 100%
+        object-fit: contain
+        object-position: center
+
+    &-heading
+      font-family: var(--font-secondary)
+      font-size: 90px
+      line-height: 90px
+      text-align: center
+      white-space: nowrap
+      padding: 10px 0
+      text-overflow: ellipsis
+      overflow: hidden
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1220px)
+  .jackpots__section
+    padding-left: 25px
+    padding-right: 25px
+
+    &:before,
+    &:after
+      display: none
+
+  .slider-jackpots
+    & .slider-arrow--prev,
+    & .slider-arrow--next
+      width: 90px
+      padding-top: 20px
+      padding-bottom: 0
+
+    & .slider-arrow--prev
+      left: -50px
+
+    & .slider-arrow--next
+      right: -50px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 768px)
+  .jackpots__section
+    &-heading:before
+      width: 52px
+      height: 52px
+
+  .slider-jackpots
+    &__slide
+      height: 470px
+      width: 100%
+
+      &-image
+        height: 370px
+        margin-bottom: 15px
+
+      &-heading
+        font-size: 45px
+        line-height: 45px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 580px)
+  .jackpots__section
+    padding-left: 10px
+    padding-right: 10px
+
+    &-heading
+      font-size: 18px
+      line-height: 20px
+
+      &:before
+        width: 36px
+        height: 36px
+
+    &-button
+      padding-top: 0
+      padding-bottom: 35px
+
+  .slider-jackpots
+    width: auto
+    margin-left: -20px
+    margin-right: -20px
+
+    & .slider-arrow--prev,
+    & .slider-arrow--next
+      width: 30px
+      align-items: flex-end
+      padding-top: 0
+      padding-bottom: 10px
+
+      & i
+        font-size: 20px
+
+    & .slider-arrow--prev
+      left: 0
+
+    & .slider-arrow--next
+      right: 0
+
+    &__slide
+      height: 315px
+      width: 100%
+
+      &-image
+        height: 255px
+        margin-bottom: 5px
+
+      &-heading
+        font-size: 35px
+        line-height: 35px
+        padding: 0

@@ -1,0 +1,304 @@
+// -----------------------------------------------------------------------------
+// Component - Form ------------------------------------------------------------
+// -----------------------------------------------------------------------------
+.form
+	display flex
+	flex-direction: column
+	align-items center
+	text-align center
+	max-width 100%
+	margin 0 auto
+
+	/* ------ form containers for half-page forms ---------------------------- */
+	&__container
+		width: 100%
+		max-width: 445px
+		margin-left: auto
+		margin-right: auto
+
+		&-heading
+			font-family: var(--font-secondary)
+			font-weight: 400
+			font-size: 36px
+			line-height: 44px
+			text-align: center
+			padding-top: 10px
+			padding-bottom: 5px
+			margin-bottom: 30px
+
+
+	/* ------ divider + title + description stuff ----------------------------- */
+	&__divider
+		position relative
+		display flex
+		justify-content space-between
+		align-items center
+		width 100%
+		margin-bottom 25px
+
+		&:before,
+		&:after
+			content ''
+			display block
+			height 1px
+			width 40%
+			background-color #ffffff
+
+	&__title
+		text-align center
+		margin-bottom 15px
+
+	&__description
+		font-size 14px
+		line-height: 1.5
+		color: var(--primary-accent-complimentary)
+		margin-bottom: 10px
+
+	/* ----- Секция формы (fieldset) ------------------------------------------ */
+	&__section
+		width 100%
+
+		&--avatar
+			width 100%
+			display flex
+			max-width 350px
+
+		&--submit
+			text-align: center
+
+		/* wrapper for submit button */
+		&--submit .button + .button
+			margin-top: 20px
+
+		/* login / registration heading for socials */
+		&-heading
+			margin-bottom: 0
+
+			&--line
+				width: 100%
+				display: flex
+				justify-content: center
+				align-items: center
+
+				& span
+					display: block
+					padding: 0 20px
+
+				&:before,
+				&:after
+					content: ""
+					flex-grow: 1
+					display: block
+					height: 1px
+					background-color: $primary-gray
+
+		/* columns / registration form */
+		&-row
+			width: calc(100% + 30px)
+			display: flex
+			margin-left: -15px
+			margin-right: -15px
+
+		&-row .form__input
+			width: calc(100% / 2 - 30px)
+			margin-left: 15px
+			margin-right: 15px
+
+	/* ----- forms inners wrappers for different rows and blocks -------------- */
+	&__row
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-top: -5px
+		margin-bottom: 30px
+
+		& .checkbox,
+		& .radio
+			width: auto
+			margin-bottom: 0
+
+	/* ----- Сообщение / Ошибка у элемента формы ------------------------------ */
+	&__error-message
+		display none
+		width 100%
+		font-size: 14px
+		line-height: 14px
+		color: $color-error
+		font-weight: 400
+		text-align: left
+		padding: 3px 0
+
+	/* ----- Сообщение / Успех у элемента формы ------------------------------- */
+	&__success-message
+		display none
+		width 100%
+		font-size: 14px
+		line-height: 14px
+		color: $color-success
+		font-weight: 400
+		text-align: left
+		padding: 3px 0
+
+	/* ----- links under button ----------------------------------------------- */
+	&__addition
+		width 100%
+		text-align center
+		font-size: 14px
+		line-height: 16px
+		margin 15px auto
+
+		&-text
+			color: var(--primary-accent-lighter)
+			margin-right: 10px
+
+		&-link
+			color: var(--primary-accent)
+			border-bottom: 1px solid transparent
+			transition: $t-border-color
+			cursor: pointer
+
+			&:hover
+				border-bottom-color: var(--primary-accent)
+
+
+	/* ----- form in modals --------------------------------------------------- */
+	&--modal
+		display flex
+		align-items center
+		margin 0 auto
+
+		.form__input
+			max-width: 280px
+			margin-left: auto
+			margin-right: auto
+
+
+	/* ----- FORM TYPES ------------------------------------------------------- */
+	/* ----- login ------------------------------------------------------------ */
+	&--login
+		display flex
+		align-items center
+		max-width 100%
+		margin 0 auto
+		text-align center
+
+		&  .form__section--socials
+			margin-bottom: 15px
+
+	/* ----- registration ----------------------------------------------------- */
+	&--registration
+		display flex
+		align-items center
+		max-width 100%
+		margin 0 auto
+		text-align center
+
+		& .form__input.checkbox + .form__input.checkbox
+			margin-top: -30px
+
+		& .form__input.checkbox:last-child
+			margin-bottom: 20px
+
+		& .form__section--bonuses
+			padding-top: 20px
+
+	/* ----- restore ---------------------------------------------------------- */
+	&--restore
+		& .link--back
+			margin-top: 20px
+
+	/* ----- form in notification: confirm ------------------------------------ */
+	&--confirm
+		display: flex
+		justify-content: center
+		width: 100%
+		max-width: 280px
+		margin: -10px auto 0
+
+		& .form__section--submit
+			margin-top: 0
+
+	/* ----- contacts (feedback) ---------------------------------------------- */
+	&--contacts
+		display flex
+		align-items center
+		max-width 100%
+		margin 0 auto
+		text-align center
+
+	/* ----- update user data ------------------------------------------------- */
+	&--update-data
+		display flex
+		align-items center
+		max-width 100%
+		margin 0 auto
+		text-align center
+
+/* some special stuff ------------------------------------------------------- */
+/* login form */
+.login-form__bottom-text
+	width: 100%
+	max-width: 445px
+	font-weight: 500
+	font-size: 14px
+	line-height: 110%
+	color: var(--primary-accent-lighter)
+	text-align: center
+	margin-top: 140px
+	margin-left: auto
+	margin-right: auto
+
+/* -------------------------------------------------------------------------- */
+/* ----- Иконка для смены видимости пароля ---------------------------------- */
+/* -------------------------------------------------------------------------- */
+.pass-switch
+	display: flex
+	align-items: center
+	justify-content: flex-end
+	width 45px
+	height 45px
+	font-size 16px
+	color: var(--primary-accent-lighter)
+	position absolute
+	top 0
+	right 0
+	z-index 1
+	transition: $t-color
+	cursor pointer
+
+	&.icon-hide
+		padding-right: 1px
+		font-size 19px
+
+	&:hover
+		color: var(--primary-accent)
+
+/* -------------------------------------------------------------------------- */
+/* ----- Datepicker stuff --------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+.form__input--datepicker
+	position: relative
+
+	&:after
+		content ""
+		width: 20px
+		height: 20px
+		background-image: url(../img/elements/datepicker-icon.svg)
+		background-position: center
+		background-size: contain
+		background-repeat: no-repeat
+		position: absolute
+		top: 33px
+		right: 0
+		pointer-events: none
+
+	& input[type="text"]
+		padding-right: 35px
+		cursor: pointer
+
+	&.disabled:after
+		opacity: .15
+
+	&.disabled input[type="text"]
+		cursor: default

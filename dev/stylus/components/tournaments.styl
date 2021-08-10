@@ -1,0 +1,191 @@
+/***
+*
+* Турниры
+*
+***/
+.tournament
+	padding-top 10px
+	&__wrapper
+		display flex
+		flex-direction unset
+	&__item
+		margin-bottom 50px
+		& h3
+			font-size 36px
+			font-weight 500
+	&__header
+		text-align left
+	&__content
+		position relative
+	&__info, &__description--wrapper
+		width 50%
+		height 444px
+		overflow hidden
+		padding 30px 30px
+	&__info
+		display flex
+		flex-wrap wrap
+		background #3A3A3A
+		margin-right 15px
+		h3
+			width 100%
+	&__date
+		padding 15px
+		margin-bottom 20px
+		background #5C5C5C
+		width calc(100% - 10px)
+		margin-right 10px
+		border-radius 5px
+		text-align center
+		height 86px
+		display flex
+		align-items center
+		flex-direction column
+		justify-content center
+		h4
+			color #F39905
+			margin 10px 0 0 0
+			font-size 16px
+			font-weight normal
+		&--wrapper
+			width 371px
+			color $text-color-gray
+			font-size 12px
+	&__time
+		background #5C5C5C
+		width calc(100% - 10px)
+		margin-right 10px
+		border-radius 5px
+		text-align center
+		height 130px
+		display flex
+		flex-direction column
+		justify-content center
+		.counter
+			margin-top 10px
+			color #00B574
+			dl
+				font-size 36px
+				font-weight bold
+				line-height 36px
+			&__value
+				font-size 36px
+				font-weight bold
+			&__desc
+				font-size 12px
+	&__description
+		text-align left
+		width 100%
+		height 100%
+		overflow auto
+		padding-right 30px
+		&--wrapper
+			background #4E4E4E
+			margin-left 15px
+		& p
+			font-size 18px
+			line-height 1.5
+	&__point
+		display flex
+		align-items center
+		justify-content center
+		flex-direction column
+		text-align center
+		width calc(100% - 381px)
+		margin-left 10px
+		background #5C5C5C
+		color $text-color-gray
+		border-radius 5px
+		padding 15px
+		height 236px
+		img
+			width 118px
+			margin-bottom 10px
+		p
+			margin-bottom 0
+		span
+			font-size 12px
+		&--value
+			font-size 24px
+			font-weight 700
+			color #F39905
+			margin-top 10px
+	&__button
+		width 100%
+		margin-top 25px
+
+	&__duration
+		color #ffffff
+	.slider-games-recent
+		margin-top 80px
+		margin-bottom 25px
+		& h4
+			margin-bottom 40px
+			font-size 24px
+			font-weight 400
+			color #ffffff
+
+	&__stat
+		max-width 540px
+		li
+			display flex
+			justify-content space-between
+			align-items center
+			font-size 16px
+			padding 10px 0
+			border-bottom 1px solid #626060
+			color $color-grey
+	.pager
+		padding-top 15px
+
+	&-winners
+		display flex
+		flex-wrap wrap
+		justify-content center
+		@supports (display: grid)
+			display grid
+			grid-template-columns repeat(5, 1fr)
+			grid-gap 25px
+			margin auto
+
+		&__item
+			font-size 14px
+			background: #3A3A3A
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+			padding 30px 15px
+			overflow hidden
+			position relative
+			width 270px
+			margin 10px
+			@supports (display: grid)
+				width unset
+				margin unset
+			li
+				display flex
+				justify-content space-between
+				align-items center
+				border-bottom 1px solid #626060
+				padding-bottom 5px
+				&:not(:last-of-type)
+					margin-bottom 10px
+
+				& span
+					font-size 20px
+					text-align right
+					color #ffffff
+					&.tournament__place
+						display flex
+						justify-content center
+						align-items center
+						font-weight: 900
+						font-size: 48px
+						width 60px
+						height 60px
+						border-radius 30px
+						text-shadow: 0 0 10px #3A3A3A
+						&.gold
+							background: linear-gradient(144.89deg, #FDE410 15.19%, #FD8210 89.08%)
+						&.silver
+							background: linear-gradient(144.89deg, #EDEDED 15.19%, #8A8A8A 89.08%)
+						&.bronze
+							background: linear-gradient(144.89deg, #FD9010 15.19%, #B55700 89.08%)

@@ -1,0 +1,23 @@
+<!--
+Компонент.
+Виджет со списком джекпотов на главной
+-->
+<section class="section section--jackpots">
+	<div class="jackpots__wrapper" data-lazy>
+		<div class="jackpots">
+			<div class="jackpots__item gold">
+				<span class="jackpots__item-name">MAIN JACKPOT</span>
+				<span class="jackpots__item-value">201 025.02 ₹</span>
+			</div>
+			<div class="jackpots__item silver">
+				<span class="jackpots__item-name">SECOND PLACE</span>
+				<span class="jackpots__item-value">20 025.45 ₹</span>
+			</div>
+			<div class="jackpots__item bronze">
+				<span class="jackpots__item-name">THIRD PLACE</span>
+				<span class="jackpots__item-value">1 999.37 ₹</span>
+			</div>
+		</div>
+		{{ block("components/banner-monthly-lottery") }}
+	</div>
+</section>

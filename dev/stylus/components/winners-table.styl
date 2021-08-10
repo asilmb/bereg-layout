@@ -1,0 +1,83 @@
+.winners-table
+	width 100%
+
+	// ----- one item stuff ------
+	&__item
+		display: flex
+		justify-content: space-between
+		align-items: center
+		background-color: var(--primary-accent)
+
+		&:not(:last-child)
+			margin-bottom 10px
+
+		&-left
+			display: flex
+			justify-content: flex-start
+			align-items: center
+
+		&-right
+			display: flex
+			justify-content: flex-end
+			align-items: center
+			padding-right 10px
+
+		&-img
+			flex-shrink: 0
+			width: 70px
+			height: 50px
+			margin-right: 10px
+			overflow: hidden
+
+			& img
+				height: 100%
+				width: 100%
+				object-fit: cover
+
+		&-content
+			min-height: 100%
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			justify-content: center
+			text-align: left
+			word-break: break-word
+			padding-right: 10px
+
+		&-name
+			font-size: 14px
+			line-height: 16px
+			color: var(--color-surface)
+
+		&-game
+			font-size: 10px
+			line-height: 12px
+			color: var(--secondary-accent-text)
+
+		&-value
+			display: flex
+			justify-content: flex-end
+			align-items: center
+			font-size: 16px
+			line-height: 19px
+			text-align: right
+			color: var(--primary-accent-complimentary)
+			white-space: nowrap
+
+			& span
+				text-transform: uppercase
+				margin-left: 5px
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 480px)
+	.winners-table__item
+		&-right
+			max-width: calc(100% / 3)
+
+		&-value
+			flex-direction: column
+			align-items: flex-end
+			font-size: 14px
+			line-height: 16px
+			white-space: normal

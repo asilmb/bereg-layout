@@ -1,0 +1,280 @@
+.bonuses
+	&__img
+		max-width 320px
+	&__params
+		width 100%
+		max-width 420px
+		margin-bottom 30px
+		& li
+			display flex
+			justify-content space-between
+			align-items center
+			padding 5px 0
+			font-size 18px
+			border-bottom 1px solid #626060
+			& span
+				font-size 24px
+				font-weight 500
+				color #ffffff
+
+	/* ----- list of bonuses -------------------------------------------------- */
+	&__list
+		display flex
+		flex-wrap wrap
+		justify-content center
+		padding-top: 5px
+
+		@supports (display: grid)
+			display grid
+			grid-template-columns repeat(4, 1fr)
+			grid-gap 30px
+
+		+ .pager
+			padding-top: 100px
+			padding-bottom: 0
+
+		& .read-more__link
+			display block
+			font-size 13px
+			line-height: 20px
+			font-weight 300
+			color var(--primary-accent)
+			cursor: pointer
+
+			&:hover
+				text-decoration: underline
+
+	&__name
+		font-size 16px
+		line-height 1.5
+		font-weight 700
+		color: var(--primary-accent-complimentary)
+		text-align left
+		margin-bottom 15px
+
+	&__item
+		position relative
+		width: 285px
+		margin: 15px
+		overflow: hidden
+
+		@supports (display: grid)
+			width unset
+			margin unset
+
+		&.flip .bonuses__item__content
+			transform rotateX(180deg)
+			z-index -1
+		&.flip .bonuses__back
+			transform rotateX(0deg)
+
+		&__content
+			height 100%
+			background-color: $color-background-secondary
+			text-align: center
+			backface-visibility: hidden
+			transform rotateX(0deg)
+			position relative
+			transition .6s all
+			z-index 1
+
+		&--flipper &__content
+			padding-top: 15px
+
+		&__img
+			padding-top 65.5%
+			background-image: linear-gradient(270deg, #111111 0%, #393939 52.08%, #111111 100%)
+			position relative
+			overflow hidden
+
+			& img
+				width 100%
+				height 100%
+				object-fit contain
+				object-position center
+				backface-visibility hidden
+				position absolute
+				top 0
+				left 0
+
+				&.no-photo
+					object-fit scale-down
+
+		&--flipper &__img
+			padding-top: 69%
+			background-image: none
+
+		/* ----- bonuses parametrs ---------------------------------------------- */
+		&__params
+
+			& .value-devider
+				font-size: 14px
+				line-height: 16px
+				text-transform: none
+				color #BFBFBF
+				font-weight 400
+
+			& li
+				display flex
+				justify-content space-between
+				align-items center
+				text-align: left
+				color #BFBFBF
+				font-size 14px
+				line-height: 1.5
+				padding 10px 15px
+
+				&:nth-of-type(odd)
+					background-color #242424
+
+				& span
+					flex-shrink: 0
+					color var(--primary-accent-complimentary)
+					font-weight 700
+					text-align right
+					text-transform: uppercase
+
+				& .button
+					margin: 10px auto
+
+		&--flipper &__params li
+			padding-left: 30px
+			padding-right: 30px
+
+		&--flipper &__params li:nth-of-type(odd)
+			background-color: transparent
+
+		&--flipper &__params .button
+			margin-top: 15px
+			margin-bottom: -5px
+
+	/* ----- back side stuff -------------------------------------------------- */
+	&__back
+		width: 100%
+		height: 100%
+		padding: 5px
+		display flex
+		flex-direction column
+		justify-content space-between
+		background $color-background-secondary
+		position absolute
+		top 0
+		left 0
+		z-index 0
+		transform rotateX(180deg)
+		transform-style preserve-3d
+		transition .6s all
+		backface-visibility: hidden
+
+		&__buttons
+			display flex
+			flex-direction: column
+			align-items center
+			justify-content: flex-start
+			padding 0 25px 0
+
+	&__description-wrapper
+		height auto
+		max-height: calc(100% - 120px)
+		background-color: #242424
+		box-shadow: 0 0 10px rgba(0,0,0,.25)
+		padding 10px 25px
+		overflow: hidden
+
+	&__description
+		font-size 14px
+		line-height 1.5
+		margin-bottom: 10px
+		max-height: calc(100% - 60px)
+		overflow-x: hidden
+		overflow-y: auto
+
+		& p
+			margin-bottom: 0
+
+			&:not(:last-child)
+				margin-bottom: 20px
+
+	&__item__details
+		display flex
+		justify-content: flex-end
+		color var(--primary-accent)
+		font-size 15px
+		line-height: 15px
+		font-weight: 300
+		padding: 0 30px 15px
+		margin-left: auto
+		transition: $t-color
+		cursor: pointer
+
+		& i
+			font-size 8px
+			margin-left: 5px
+
+		&:hover
+			color: var(--primary-accent-complimentary)
+
+	&__back__buttons &__item__details
+		padding-top: 10px
+		padding-right: 0
+		padding-bottom: 10px
+		margin-top: 30px
+
+
+	/* --- bonus name in params ----------------------------------------------- */
+	&__item__params &__name
+		min-height: 65px
+		justify-content: center
+		text-align: center
+		font-size: 16px
+		line-height: 20px
+		color: var(--primary-accent-complimentary)
+		word-break break-word
+		padding: 5px 15px
+		margin: 0
+
+	/* --- bonus name in back ----------------------------------------------- */
+	&__back &__name
+		line-height: 22px
+		text-align: center
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
+
+	/* --- statuses in params ------------------------------------------------- */
+	&__item__params &__status
+		padding: 0
+
+		& span
+			width: 100%
+			min-height: 44px
+			font-size: 16px
+			line-height: 1.5
+			text-transform uppercase
+			text-align: center
+			padding: 10px
+
+			&.active
+				color #05FF00
+				background-color: #3F593E
+			&.rejected
+				color: #f54a50
+				background-color: #503434
+			&.finished
+				color: #0094ff
+				background-color: #003A64
+			&.pending
+				color: #FFF500
+				background-color: #5C5B36
+
+
+.bonuses__game-name
+	display block
+	width 140px
+	white-space nowrap
+	text-overflow ellipsis
+	overflow hidden
+	font-size 16px
+	text-align right
+	&:hover
+		color #ffffff

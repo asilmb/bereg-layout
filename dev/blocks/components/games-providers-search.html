@@ -1,0 +1,21 @@
+<!-- Селект провайдеров и поиск -->
+<div class="games__providers-search">
+	<div class="games__providers-search-inner">
+		<div class="games__providers-search-left">
+			<div class="games-sort">
+				<h2 class="games-sort__heading">Сортировать по:</h2>
+				<div class="games-sort__params">
+					<div class="games-sort__params-item">Популярные</div>
+					<div class="games-sort__params-item active">А — Я</div>
+				</div>
+			</div>
+
+			<a class="games__favorite" href="/pages/games/games.html"></a>
+		</div>
+
+		<div class="games__providers-search-right">
+			{{ block("components/menu/provider-menu") }}
+			<a data-header-search class="games__search" href="/pages/modals/search/search.html"><i class="icon-search"></i><span>Найди свою игру</span></a>
+		</div>
+	</div>
+</div>

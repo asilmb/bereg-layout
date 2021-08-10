@@ -1,0 +1,155 @@
+.search
+	position relative
+	display flex
+	align-items center
+	width 260px
+	margin auto
+
+	& input
+		width 100%
+		height: 40px
+		border: 0
+		color: var(--primary-accent-complimentary)
+		background-color:$color-background
+		border-bottom: 1px solid $primary-gold
+		outline: none
+		border-radius: 0
+		padding-right 40px
+
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover,
+		&:-webkit-autofill:focus,
+		&:-webkit-autofill:active,
+		&:-internal-autofill-selected,
+		&:-internal-autofill-previewed
+			color #ffffff !important
+			-webkit-text-fill-color: #ffffff !important
+			background-color: $color-background !important
+			border-bottom: 1px solid $primary-gold
+
+		&::placeholder
+			opacity: .4
+			transition: $t-opacity
+
+		&:focus::placeholder
+			opacity: 0
+
+		&:focus
+			border-bottom-color: var(--primary-accent)
+
+	&-button
+		position absolute
+		right 0
+		display flex
+		justify-content center
+		align-items center
+		box-sizing border-box
+		height 40px
+		width 40px
+		margin-left 5px
+		font-size 24px
+
+// ------ when search opened ---------------------------------------------------
+body.header-search .mfp-move-from-top.mfp-wrap
+	top: 140px
+
+body.header-search .mfp-move-from-top.mfp-wrap .mfp-content
+	width: 100%
+	height: 100%
+	margin: 0
+
+body.header-search .search__wrapping
+	width: auto
+	padding 0 110px
+	background-color: $color-background
+	position: absolute
+	top: 0
+	left: -8px
+	right: -8px
+	z-index: 9
+
+	&-inner
+		width: 100%
+		height: 50px
+		display: flex
+		justify-content: center
+		align-items: center
+		position: relative
+		margin auto
+
+.desktop body.header-search .search__wrapping
+	right: 9px
+
+.mobile body.header-search .search__wrapping
+	right: -8px
+
+// ----- SEARCH in HEADER // DESKTOPS ------------------------------------------
+.search__wrapping
+	& .search
+		width: 100%
+		max-width: calc(1920px - 60px)
+		padding-bottom: 10px
+		margin: auto
+
+		& input
+			height: 40px
+			font-size: 18px
+			line-height: 22px
+			padding: 5px 40px 0
+
+		&__submit
+			width: 30px
+			height: 50px
+			position: absolute
+			right: auto
+			left: 1px
+			margin: 0
+			cursor: pointer
+
+			& .icon-search
+				color: var(--primary-accent)
+				font-size: 20px
+				margin-left: -10px
+				margin-top: 5px
+				transition: $t-text-shadow
+
+			&:hover .icon-search,
+			&:focus .icon-search
+				text-shadow: var(--primary-shadow)
+
+		&__clear
+			width: 50px
+			height: 50px
+			position: absolute
+			top: 0
+			right: -15px
+			cursor: pointer
+
+			& .icon-close
+				color: var(--primary-accent)
+				font-size: 20px
+				transition: $t-text-shadow
+
+			&:hover .icon-close,
+			&:focus .icon-close
+				text-shadow: var(--primary-shadow)
+
+// ----- SEARCH in GAMES pages -------------------------------------------------
+.games__search
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	text-align: right
+	font-weight: 500
+	font-size: 18px
+	line-height: 1.5
+	letter-spacing: .05em
+	transition: $t-color
+	cursor: pointer
+
+	& .icon-search
+		font-size: 25px
+		margin-right: 20px
+
+	&:hover
+		color: var(--primary-accent)

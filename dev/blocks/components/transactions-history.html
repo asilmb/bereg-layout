@@ -1,0 +1,106 @@
+<!-- Истории транзакций -->
+<div class="tabs__wrapper">
+	<div class="tabs__content active" data-history-deposit-content>
+		<div class="transactions-history__table">
+			<div class="table table-list table--transactions">
+				<table>
+					<thead>
+					<tr>
+						<th class="plate-heading"><!--empty!--></th>
+						<th>ID</th>
+						<th>Amount</th>
+						<th>Currency</th>
+						<th>Date(GMT+)</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td class="plate-heading"><span>Депозит</span></td>
+						<td>35123</td>
+						<td>14.88</td>
+						<td>EUR</td>
+						<td>13.09.2017</td>
+						<td class="td-status"><span class="pending">Pending</span></td>
+						<td class="td-button"><button class="button button--w175 button--bordered-filled button--small">Cancel</button></td>
+					</tr>
+					<tr>
+						<td class="plate-heading"><span>Депозит</span></td>
+						<td>35123</td>
+						<td>14.88</td>
+						<td>EUR</td>
+						<td>13.09.2017</td>
+						<td class="td-status"><span class="rejected">Rejected</span></td>
+						<td class="td-button"><!--empty!--></td>
+					</tr>
+					<tr>
+						<td class="plate-heading"><span>Депозит</span></td>
+						<td>35123</td>
+						<td>14.88</td>
+						<td>EUR</td>
+						<td>31.12.2020</td>
+						<td class="td-status"><span class="completed">Completed</span></td>
+						<td class="td-button"><!--empty!--></td>
+					</tr>
+					{% for item in range(0, 9 ) %}
+					<tr>
+						<td class="plate-heading"><span>Депозит</span></td>
+						<td>35123</td>
+						<td>235 641,21</td>
+						<td>EUR</td>
+						<td>19.01.2020</td>
+						<td class="td-status"><span class="accepted">Accepted</span></td>
+						<td class="td-button"><button class="button button--w175 button--bordered-filled button--small">Cancel</button></td>
+					</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+				{{ block("components/pagination")}}
+			</div>
+		</div>
+	</div>
+
+	<div class="tabs__content" data-history-withdraw-content>
+		<div class="transactions-history__table">
+			<div class="table table-list table--transactions">
+				<table>
+					<thead>
+					<tr>
+						<th class="plate-heading"><!--empty!--></th>
+						<th>ID</th>
+						<th>Amount</th>
+						<th>Currency</th>
+						<th>Date(GMT+)</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="plate-heading"><span>Вывод</span></td>
+							<td>35123</td>
+							<td>235 641,21</td>
+							<td>EUR</td>
+							<td>10.08.2020</td>
+							<td class="td-status"><span class="rejected">Rejected</span></td>
+							<td class="td-button"><!--empty!--></td>
+						</tr>
+						{% for item in range(0, 11) %}
+						<tr>
+							<td class="plate-heading"><span>Вывод</span></td>
+							<td>35123</td>
+							<td>235 641,21</td>
+							<td>EUR</td>
+							<td>13.09.2020</td>
+							<td class="td-status"><span class="pending">Pending</span></td>
+							<td class="td-button"><button class="button button--w175 button--bordered-filled button--small">Cancel</button></td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				{{ block("components/pagination")}}
+			</div>
+		</div>
+	</div>
+</div>

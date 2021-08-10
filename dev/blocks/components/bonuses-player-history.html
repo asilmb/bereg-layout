@@ -1,0 +1,10 @@
+<!-- Список бонусов в истории бонусов игрока -->
+
+<ul class="bonuses__list bonuses__list--history" data-lazy>
+	{{ block("elements/bonus-history-rejected-v1") }}
+	{{ block("elements/bonus-history-pending-v1") }}
+	{{ block("elements/bonus-history-finished-v1") }}
+	{% for item in range(0, 9) %}
+	{{ block("elements/bonus-history-active-v1") }}
+	{% endfor %}
+</ul>

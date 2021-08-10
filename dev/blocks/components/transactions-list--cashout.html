@@ -1,0 +1,32 @@
+<!-- Компонент. Список выводов -->
+<ul class="transactions__list" data-lazy>
+  {% for item in range(0, 4) %}
+  <li class="transactions__item">
+    <div class="transactions__item-img">
+      <img data-src="../../img/payments/free-kassa.svg" alt="Payment system">
+    </div>
+    <div class="transactions__item-description">
+      <p>A payment order is drawn up when money is transferred from one current account to another.</p>
+    </div>
+    <a data-modal href="/pages/modals/withdraw/withdraw.html" class="button button--w175 button--light-filled transactions__item-button">Withdrawal</a>
+  </li>
+  <li class="transactions__item">
+    <div class="transactions__item-img">
+      <img data-src="../../img/payments/piastrix.svg" alt="Payment system">
+    </div>
+    <div class="transactions__item-description">
+      <p>A payment order is drawn up when money is transferred from one current account to another.</p>
+    </div>
+    <a data-modal href="/pages/modals/withdraw/withdraw.html" class="button button--w175 button--light-filled transactions__item-button">Withdrawal</a>
+  </li>
+  <li class="transactions__item">
+    <div class="transactions__item-img">
+      <img data-src="../../img/payments/mastercard.png" alt="Payment system">
+    </div>
+    <div class="transactions__item-description">
+      <p>A payment order is drawn up when money is transferred from one current account to another.</p>
+    </div>
+    <a data-modal href="/pages/modals/withdraw/withdraw.html" class="button button--w175 button--light-filled transactions__item-button">Withdrawal</a>
+  </li>
+  {% endfor %}
+</ul>

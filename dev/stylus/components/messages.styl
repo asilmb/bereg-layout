@@ -1,0 +1,245 @@
+/***
+*
+* Список сообщений + подробности сообщения
+*
+***/
+.msg
+	/* ------ one item -------------------------------------------------------- */
+	&__item-wrapper
+		width: 100%
+		max-width: 1390px
+		padding: 0 20px
+		margin: 45px auto 0
+		position: relative
+
+		/* gold line on top */
+		&:before
+			content: ""
+			height: 2px
+			background-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(222,175,118,0.5) 25%, #DCA96B 50%, rgba(222,175,118,0.5) 75%, rgba(0,0,0,0) 100%);
+			position: absolute
+			left: 0
+			right: 0
+			pointer-events: none
+			z-index: 1
+
+	&__item-wrapper &__item
+		width: 100%
+		max-width: 855px
+		padding-top: 30px
+		margin: 0 auto
+
+	&__item
+		&:not(:last-child)
+			margin-bottom: 45px
+
+		&-status
+			max-width: 240px
+			min-width: 80px
+			height: 38px
+			font-size: 18px
+			line-height: 18px
+			color: var(--secondary-accent-text)
+			font-weight: 700
+			white-space: nowrap
+			text-align: center
+			text-transform: uppercase
+			background-color: var(--primary-accent-lighter)
+			border-radius: 10px
+			padding: 10px
+			position: absolute
+			top: -20px
+			right: 20px
+
+			& span
+				display: inline-block
+				max-width: 100%
+				overflow: hidden
+				text-overflow: ellipsis
+
+			&:after
+				content: ""
+				width: 0;
+				height: 0;
+				border-top: 0 solid transparent
+				border-bottom: 15px solid transparent
+				border-left: 21px solid var(--primary-accent-lighter)
+				position: absolute
+				left: 10px
+				bottom: -10px
+
+		&.readed &-status
+			display: none
+
+		&-title
+			font-family: var(--font-secondary)
+			font-size 24px
+			line-height: 34px
+			font-weight 400
+			color: var(--primary-accent-complimentary)
+			text-transform: none
+			margin-bottom: 20px
+
+			& > a
+				height: 68px
+				transition: $t-color
+				overflow: hidden
+
+			& > a:hover
+				color var(--primary-accent)
+
+		&-content
+			font-size 18px
+			line-height 1.5
+			font-weight: 400
+			color: var(--primary-accent-complimentary)
+			margin-bottom: 15px
+			opacity: .75
+
+			& p
+				margin-bottom: 15px
+
+		&-date
+			display: block
+			font-size: 14px
+			line-height: 1.5
+			color: var(--primary-accent-lighter)
+			font-weight: 400
+			margin-bottom: 30px
+
+		&-button
+			display: flex
+			justify-content: flex-start
+
+		&-footer
+			margin 45px 0 0
+
+			& .link--primary
+				font-size: 18px
+				line-height: 1
+				color: var(--primary-accent)
+
+				&:hover
+					color: var(--primary-accent-lighter)
+
+	/* ----- list-------------------------------------------------------------- */
+	&__list-wrapper
+		width: 100%
+		max-width: 1670px
+		padding: 0 50px
+		margin: 45px auto 0
+		position: relative
+
+		/* gold line on top */
+		&:before
+			content: ""
+			height: 2px
+			background-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(222,175,118,0.5) 25%, #DCA96B 50%, rgba(222,175,118,0.5) 75%, rgba(0,0,0,0) 100%);
+			position: absolute
+			left: 0
+			right: 0
+			pointer-events: none
+			z-index: 1
+
+		& + .pager
+			padding-top: 45px
+			padding-bottom: 0
+
+	&__list
+		width: 100%
+		display flex
+		flex-wrap wrap
+		justify-content center
+		padding-top: 5px
+		margin-bottom: 40px
+
+		@supports (display: grid)
+			display grid
+			grid-template-columns repeat(4, 1fr)
+			grid-gap 30px
+
+	&__list &__item
+		width 25%
+		background-color: var(--secondary-accent-lighter)
+		padding: 45px 20px 35px
+		margin 15px
+		position: relative
+
+		@supports (display: grid)
+			width unset
+			margin unset
+
+		&.readed
+			background-color: var(--secondary-accent)
+
+	&__list &__item-content
+		height: 80px
+		overflow: hidden
+
+		& p
+			margin-bottom 0
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1440px)
+	.msg__list
+		@supports (display: grid)
+			grid-template-columns repeat(3, 1fr)
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1220px)
+	.msg__item
+		padding-top: 35px
+
+		&-title
+			font-size: 20px
+			line-height: 30px
+
+			& > a
+				height: 60px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1024px)
+	.msg__list-wrapper
+		padding: 0 25px
+
+	.msg__list
+		@supports (display: grid)
+			grid-template-columns repeat(2, 1fr)
+
+	.msg__item-button .button
+		width: 100%
+		max-width: 240px
+
+	.msg__item-wrapper .msg__item
+		padding-left: 50px
+		padding-right: 50px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 580px)
+	.msg__list-wrapper
+		padding: 0 15px
+
+	.msg__list
+		@supports (display: grid)
+			grid-template-columns repeat(1, 1fr)
+
+	.msg__item
+		&-title
+			height: auto
+
+		&-content
+			height: auto
+
+		&-button
+			justify-content: center
+
+	.msg__item-wrapper
+		padding: 0 15px
+
+	.msg__item-wrapper .msg__item
+		padding-left: 0
+		padding-right: 0
+
+		&-content
+			font-size: 16px
+			line-height: 1.5

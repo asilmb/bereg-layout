@@ -1,0 +1,234 @@
+.profile
+
+	// ----- header with title & tabs captions -----------------------------------
+	&__header
+		max-width: 1320px
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 0 25px
+		margin: 0 auto 5px
+
+		&-button
+			margin: 0
+
+	// ----- heading under menu for page -----------------------------------------
+	&__title
+		font-family: var(--font-secondary)
+		font-weight: 400
+		font-size: 36px
+		line-height: 44px
+		text-align: center
+		padding-top: 10px
+		margin-bottom: 20px
+
+	// ----- profile info page stuff ---------------------------------------------
+	&-info
+		display flex
+		max-width: 1140px
+		width 100%
+		padding-top: 140px
+		padding-left: 40px
+		padding-right: 40px
+		margin: auto
+		position: relative
+
+		@supports (display: grid)
+			display grid
+			grid-template-columns 430px auto
+			grid-column-gap 185px
+			width 100%
+
+		/* ----- left part ------------------------------------------------------ */
+		&__left
+			display flex
+			flex-direction column
+			padding-top: 80px
+
+		&__extra
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			background-color: var(--secondary-accent)
+			padding: 20px
+
+		&__loyalty,
+		&__id
+			flex-shrink: 0
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			margin-bottom: 50px
+
+			&-heading
+				color: var(--primary-accent)
+				font-size: 14px
+				line-height: 1
+				margin-right: 10px
+
+			&-value
+				color: var(--primary-accent-lighter)
+				font-size: 16px
+				line-height: 1
+				padding-right: 5px
+
+		&__id
+			width: 100%
+
+		&__socials
+			&-text
+				color: var(--primary-accent)
+				font-size: 14px
+				line-height: 1
+				margin-bottom: 35px
+
+			& .socials__list--auth
+				margin-bottom: 0
+
+		/* ----- right part ----------------------------------------------------- */
+		&__right
+			max-width: 100%
+
+			/* tabs: move under page title */
+			& .tabs.tabs--profile
+				justify-content: center
+				flex-wrap: wrap
+				position: absolute
+				top: -5px
+				left: 0
+				right: 0
+
+		/* ----- forms stuff ---------------------------------------------------- */
+		&__form
+			width: 100%
+
+			&-inner,
+			&-button
+				width: 100%
+
+			&-button
+				padding-top: 20px
+
+		/* secret Q & A stuff */
+		&__form-question
+			width 100%
+			max-width: 605px
+			padding-top: 35px
+			margin-right: auto
+			margin-bottom: 15px
+
+			& .form__input
+				margin-bottom: 5px
+
+				& input[type='text'],
+				& input[type='password'],
+				& input[type='email'],
+				& input[type='tel'],
+				& textarea,
+				& .selectric-wrapper
+					margin-bottom: 0
+
+		/* ----- verification stuff --------------------------------------------- */
+		&__verification
+			width: 100%
+			display: flex
+			flex-wrap: wrap
+			padding: 20px 0
+			margin-right: auto
+
+			&-heading
+				width: 100%
+				font-size 14px
+				line-height: 20px
+				font-weight: 700
+				text-align: left
+				margin-bottom: 20px
+
+			&-input
+				padding-top: 30px
+				margin-bottom: 10px
+
+				.form__input
+					margin-bottom: 20px
+
+			&-radio
+				flex-shrink: 0
+				flex-direction: column
+				justify-content: flex-start
+				align-items: flex-start
+
+				& .radio__item
+					margin: 0 0 20px 0
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1220px)
+	.profile-info
+		&__left
+			padding-top: 50px
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1199px)
+	.profile-info
+		@supports (display: grid)
+			grid-template-columns 350px auto
+			grid-column-gap 120px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 1024px)
+	.profile-info
+		@supports (display: grid)
+			grid-template-columns 290px auto
+			grid-column-gap 50px
+
+		&__extra
+			padding: 20px 10px 15px
+
+		&__loyalty,
+		&__id
+			margin-bottom: 15px
+
+		&__socials
+			&-text
+				padding-top: 10px
+				margin-bottom: 20px
+
+			& .socials__list--auth
+				justify-content: flex-start
+
+				& .socials__item-link
+					margin-top: 5px
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 710px)
+	.profile-info
+		padding-left: 25px
+		padding-right: 25px
+
+		@supports (display: grid)
+			grid-column-gap 25px
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 580px)
+	.profile__title
+		font-size: 32px
+		line-height: 40px
+
+	.profile-info
+		display: block
+		padding-top: 0
+		padding-left: 15px
+		padding-right: 15px
+
+		&__left
+			padding-top: 0
+			margin-bottom: 20px
+
+		&__right
+			/* tabs: move on right place */
+			& .tabs.tabs--profile
+				position: static
+				flex-direction: column

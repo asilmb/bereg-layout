@@ -1,0 +1,130 @@
+/***
+*
+* Лоялти компонент
+*
+***/
+
+.loyalty
+	width: auto
+	font-family: var(--font-primary)
+
+	// &__plate
+	// 	width: 100%
+	// 	max-width: 1015px
+	// 	background-color: var(--color-surface)
+	// 	padding: 45px 55px 60px
+	// 	margin: 0 auto
+	//
+	// 	& .page__header
+	// 		padding-top: 0
+
+	&__description
+		padding-top: 10px
+		margin-bottom: 25px
+
+		& p
+			font-size 14px
+			line-height 1.5
+
+	&__list
+		display flex
+		flex-wrap wrap
+		justify-content center
+		padding-top 20px
+
+		@supports (display: grid)
+			display grid
+			grid-template-columns repeat(3, 1fr)
+			grid-gap 30px
+
+	&__item
+		width 260px
+		color #000
+		margin 10px
+		background-color: #242424
+		overflow: hidden
+
+		@supports (display: grid)
+			width unset
+			margin unset
+
+		&-row
+			display flex
+			justify-content space-between
+			width 100%
+			min-height 65px
+
+			&:not(:last-child)
+				border-bottom 1px solid #41341F
+
+			&:last-of-type
+				.loyalty__item-value
+					font-weight normal
+					text-transform none
+					font-size 14px
+
+		&-heading
+			display flex
+			align-items center
+			color: #BFBFBF
+			font-size 14px
+			line-height: 1.5
+			width 100px
+			padding 10px 5px
+			background-color: $color-background-secondary
+
+		&-value,
+		&-level-value
+			display flex
+			align-items center
+			width: calc(100% - 100px)
+			font-size 16px
+			line-height: 1.5
+			font-weight 700
+			color: var(--primary-accent-complimentary)
+			padding 0 10px
+			text-transform uppercase
+
+			& .icon-loyalty-star
+				font-size: 28px
+				color: var(--primary-accent)
+				text-shadow: none
+				margin-right: 10px
+
+		& .loyalty__level-icon
+			width: 26px
+			height: 26px
+			background-position: center
+			background-size: contain
+			background-repeat: no-repeat
+			margin-right: 10px
+
+		&--diamond
+			& .loyalty__item-level-value
+				color: #00D1FF
+			& .loyalty__level-icon
+				background-image:  url("../img/loyalty/loyalty-diamond.svg")
+
+		&--platinum
+			& .loyalty__item-level-value
+				color: #CEF3FF
+			& .loyalty__level-icon
+				background-image:  url("../img/loyalty/loyalty-platinum.svg")
+
+		&--gold
+			& .loyalty__item-level-value
+				color: #FFC057
+			& .loyalty__level-icon
+				background-image:  url("../img/loyalty/loyalty-gold.svg")
+
+		&--silver
+			& .loyalty__item-level-value
+				color: #848484
+			& .loyalty__level-icon
+				background-image: url("../img/loyalty/loyalty-silver.svg")
+
+		&--black
+			& .loyalty__item-level-value
+				color: #000000
+			& .loyalty__level-icon
+				background-image: url("../img/loyalty/loyalty-black.svg")

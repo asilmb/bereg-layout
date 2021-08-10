@@ -1,0 +1,23 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+
+{% block content %}
+
+<div class="page page-notification">
+	<div class="container">
+		<div class="page-notification__inner">
+			<div class="page-notification__img">
+				<img src="/img/notifications/notification--contacts-success.png" alt="">
+			</div>
+			<h1 class="page-notification__title">Thanks!</h1>
+			<div class="page-notification__description">
+				<p>Your message has been successfully sent.<br> Our managers will definitely contact you.</p>
+			</div>
+			<div class="page-notification__buttons">
+				<a href="/pages/index/index.html" class="button button--w280 button--filled">Go main</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+<ul class="games__list" data-lazy>
+	{{ block("elements/game-item-6") }}
+	{% for item in range(0, 2) %}
+	{{ block("elements/game-item") }}
+	{{ block("elements/game-item-2") }}
+	{{ block("elements/game-item-3") }}
+	{{ block("elements/game-item-4") }}
+	{{ block("elements/game-item-5") }}
+	{% endfor %}
+	{{ block("elements/game-item-6") }}
+</ul>

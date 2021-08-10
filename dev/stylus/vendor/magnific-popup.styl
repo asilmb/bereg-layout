@@ -1,0 +1,329 @@
+.mfp-bg
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 1042
+	overflow: hidden
+	width: 100%
+	height: 100%
+	background: #0b0b0b
+	opacity: 0.8
+.mfp-wrap
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 1043
+	width: 100%
+	height: 100%
+	outline: none !important
+	-webkit-backface-visibility: hidden
+.mfp-container
+	position: absolute
+	top: 0
+	left: 0
+	box-sizing: border-box
+	padding: 0 8px
+	width: 100%
+	height: 100%
+	text-align: center
+.mfp-container:before
+	display: inline-block
+	height: 100%
+	content: ''
+	vertical-align: middle
+.mfp-align-top .mfp-container:before
+	display: none
+.mfp-content
+	position: relative
+	z-index: 1045
+	display: inline-block
+	margin: 0 auto
+	vertical-align: middle
+	text-align: left
+.mfp-inline-holder .mfp-content, .mfp-ajax-holder .mfp-content
+	width auto
+	max-width 100%
+	cursor: auto
+.mfp-ajax-cur
+	cursor: progress
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close
+	cursor: zoom-out
+.mfp-zoom
+	cursor: zoom-in
+.mfp-auto-cursor .mfp-content
+	cursor: auto
+.mfp-close, .mfp-arrow, .mfp-preloader, .mfp-counter
+	user-select: none
+.mfp-loading.mfp-figure
+	display: none
+.mfp-hide
+	display: none !important
+.mfp-preloader
+	position: absolute
+	top: 50%
+	right: 8px
+	left: 8px
+	z-index: 1044
+	margin-top: -0.8em
+	width: auto
+	color: #CCC
+	text-align: center
+.mfp-preloader a
+	color: #CCC
+.mfp-preloader a:hover
+	color: white
+.mfp-s-ready .mfp-preloader
+	display: none
+.mfp-s-error .mfp-content
+	display: none
+/* overlay at start */
+.mfp-fade.mfp-bg
+	opacity: 0
+	transition: all 0.15s ease-out
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready
+	opacity: 0.8
+	background-color: #232737
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing
+	opacity: 0
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content
+	opacity: 0
+	transition: all 0.15s ease-out
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content
+	opacity: 1
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content
+	opacity: 0
+.mfp-with-zoom .mfp-container, .mfp-with-zoom.mfp-bg
+	opacity: 0
+	transition: all 0.3s ease-out
+.mfp-with-zoom.mfp-ready .mfp-container
+	opacity: 1
+.mfp-with-zoom.mfp-ready.mfp-bg
+	opacity: 0.8
+.mfp-with-zoom.mfp-removing .mfp-container, .mfp-with-zoom.mfp-removing.mfp-bg
+	opacity: 0
+button.mfp-close, button.mfp-arrow
+	z-index: 1046
+	display: block
+	overflow: visible
+	padding: 0
+	outline: none
+	border: 0
+	background: transparent
+	box-shadow: none
+	cursor: pointer
+	-webkit-appearance: none
+	touch-action: manipulation
+button::-moz-focus-inner
+	padding: 0
+	border: 0
+.mfp-close
+	position: absolute
+	top: 15px
+	right: 15px
+	padding: 0 0 18px 10px
+	width: 25px
+	height: 25px
+	color: white
+	text-align: center
+	text-decoration: none
+	font-style: normal
+	font-size: 39px
+	font-family: serif, monospace
+	line-height: 25px
+.mfp-close:hover, .mfp-close:focus
+	color $primary-yellow
+.mfp-close:active
+	color $primary-yellow
+.mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close
+	right: -6px
+	padding-right: 6px
+	width: 100%
+	color: white
+	text-align: right
+.mfp-counter
+	position: absolute
+	top: 0
+	right: 0
+	color: #CCC
+	white-space: nowrap
+	font-size: 12px
+	line-height: 18px
+.mfp-arrow
+	position: absolute
+	top: 50%
+	margin: 0
+	margin-top: -55px
+	padding: 0
+	width: 90px
+	height: 110px
+	opacity: 0.65
+	-webkit-tap-highlight-color: transparent
+.mfp-arrow:active
+	margin-top: -54px
+.mfp-arrow:hover, .mfp-arrow:focus
+	opacity: 1
+.mfp-arrow:before, .mfp-arrow:after
+	position: absolute
+	top: 0
+	left: 0
+	display: block
+	margin-top: 35px
+	margin-left: 35px
+	width: 0
+	height: 0
+	border: medium inset transparent
+	content: ''
+.mfp-arrow:after
+	top: 8px
+	border-top-width: 13px
+	border-bottom-width: 13px
+.mfp-arrow:before
+	border-top-width: 21px
+	border-bottom-width: 21px
+	opacity: 0.7
+.mfp-arrow-left
+	left: 0
+.mfp-arrow-left:after
+	margin-left: 31px
+	border-right: 17px solid white
+.mfp-arrow-left:before
+	margin-left: 25px
+	border-right: 27px solid #3F3F3F
+.mfp-arrow-right
+	right: 0
+.mfp-arrow-right:after
+	margin-left: 39px
+	border-left: 17px solid white
+
+.mfp-arrow-right:before
+	border-left: 27px solid #3F3F3F
+.mfp-iframe-holder
+	padding-top: 40px
+	padding-bottom: 40px
+.mfp-iframe-holder .mfp-content
+	max-width: 900px
+	width: 100%
+	line-height: 0
+.mfp-iframe-holder .mfp-close
+	top: -40px
+.mfp-iframe-scaler
+	overflow: hidden
+	padding-top: 56.25%
+	width: 100%
+	height: 0
+.mfp-iframe-scaler iframe
+	position: absolute
+	top: 0
+	left: 0
+	display: block
+	width: 100%
+	height: 100%
+	background: black
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.6)
+/* Main image in popup */
+img.mfp-img
+	display: block
+	box-sizing: border-box
+	margin: 0 auto
+	padding: 40px 0
+	max-width: 100%
+	width: auto
+	height: auto
+	line-height: 0
+/* The shadow behind the image */
+.mfp-figure
+	line-height: 0
+.mfp-figure:after
+	position: absolute
+	top: 40px
+	right: 0
+	bottom: 40px
+	left: 0
+	z-index: -1
+	display: block
+	width: auto
+	height: auto
+	background: #444
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.6)
+	content: ''
+.mfp-figure small
+	display: block
+	color: #BDBDBD
+	font-size: 12px
+	line-height: 14px
+.mfp-figure figure
+	margin: 0
+.mfp-bottom-bar
+	position: absolute
+	top: 100%
+	left: 0
+	margin-top: -36px
+	width: 100%
+	cursor: auto
+.mfp-title
+	padding-right: 36px
+	color: #F3F3F3
+	text-align: left
+	word-wrap: break-word
+	line-height: 18px
+.mfp-image-holder .mfp-content
+	max-width: 100%
+.mfp-gallery .mfp-image-holder .mfp-figure
+	cursor: pointer
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px)
+	/**
+	 * Remove all paddings around the image on small screen
+	 */
+	.mfp-img-mobile .mfp-image-holder
+		padding-right: 0
+		padding-left: 0
+	.mfp-img-mobile img.mfp-img
+		padding: 0
+	.mfp-img-mobile .mfp-figure:after
+		top: 0
+		bottom: 0
+	.mfp-img-mobile .mfp-figure small
+		display: inline
+		margin-left: 5px
+	.mfp-img-mobile .mfp-bottom-bar
+		position: fixed
+		top: auto
+		bottom: 0
+		box-sizing: border-box
+		margin: 0
+		padding: 3px 5px
+		background: rgba(0, 0, 0, 0.6)
+	.mfp-img-mobile .mfp-bottom-bar:empty
+		padding: 0
+	.mfp-img-mobile .mfp-counter
+		top: 3px
+		right: 5px
+	.mfp-img-mobile .mfp-close
+		position: fixed
+		top: 0
+		right: 0
+		padding: 0
+		width: 35px
+		height: 35px
+		background: rgba(0, 0, 0, 0.6)
+		text-align: center
+		line-height: 35px
+@media all and (max-width: 900px)
+	.mfp-arrow
+		transform: scale(0.75)
+		-webkit-transform: scale(0.75)
+	.mfp-arrow-left
+		transform-origin: 0
+		-webkit-transform-origin: 0
+	.mfp-arrow-right
+		transform-origin: 100%
+		-webkit-transform-origin: 100%
+	.mfp-container
+		padding-right: 6px
+		padding-left: 6px
+

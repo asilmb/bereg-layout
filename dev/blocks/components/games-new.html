@@ -1,0 +1,27 @@
+<section class="games__section games__section--new">
+	<div class="container">
+		<h2 class="games__section-heading">New games</h2>
+
+		<ul class="games__list" data-lazy>
+			{% for item in range(0, 3) %}
+			{{ block("elements/game-item-5") }}
+			{% endfor %}
+			{% for item in range(0, 2) %}
+			{{ block("elements/game-item-4") }}
+			{% endfor %}
+			{% for item in range(0, 2) %}
+			{{ block("elements/game-item-3") }}
+			{% endfor %}
+			{% for item in range(0, 2) %}
+			{{ block("elements/game-item-2") }}
+			{% endfor %}
+			{% for item in range(0, 3) %}
+			{{ block("elements/game-item") }}
+			{% endfor %}
+		</ul>
+
+		<div class="games__section-button">
+			<a href="/pages/games/games.html" class="button button--w210 button--filled">See all</a>
+		</div>
+	</div>
+</section>

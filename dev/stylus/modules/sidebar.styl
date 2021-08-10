@@ -1,0 +1,48 @@
+// -----------------------------------------------
+// Module - Navigation sidebar
+// -----------------------------------------------
+
+.sidebar
+	display flex
+	flex-direction column
+	align-items flex-start
+	width 250px
+	padding 30px
+	background #3A3A3A
+	height fit-content
+	&-toggler
+		display flex
+		flex-direction row-reverse
+		align-items center
+		font-size 22px
+		font-weight 700
+		color var(--primary-accent-complimentary)
+		transition all .3s
+		&:before
+			margin-left 15px
+			font-size 10px
+		&.active
+			color $primary-red
+			transition all .3s
+			&:before
+				margin-top 5px
+				transform rotateX(-180deg)
+
+		&__wrapper
+			display none
+			width 100%
+			padding 15px
+			border-radius 0 0 15px 15px
+			background $primary-gray
+
+	&__wrapper
+		width 100%
+	&__title
+		margin-bottom 20px
+		h2
+			font-size 24px
+			line-height 29px
+	&__component
+		width 100%
+		&:not(:last-of-type)
+			margin-bottom 50px

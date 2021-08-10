@@ -1,0 +1,66 @@
+.game-info
+	width 100%
+	padding-top: 5px
+	text-align: center
+
+	&__game-title
+		padding: 15px 0
+
+		& h1, & h2, & h3
+			font-size 18px
+			line-height: 21px
+			letter-spacing: .02em
+			text-align: left
+			font-weight: 400
+			padding: 0
+			margin-bottom 0
+
+	&__list
+		padding-top: 5px
+		margin-bottom 35px
+
+		& li
+			display flex
+			justify-content space-between
+			font-size: 14px
+			line-height: 16px
+			letter-spacing: .02em
+			margin-bottom 10px
+
+			& span
+				flex-shrink 0
+				margin-right 15px
+
+			& .game-info__value
+				margin-right 0
+				font-weight 600
+				font-size 16px
+
+	&__links,
+	&__provider
+		text-align right
+
+		& a
+			text-decoration underline
+			transition: $t-color
+			cursor: pointer
+
+			&:not(:last-child):after
+				content: ","
+
+			&:hover
+				color: var(--primary-accent)
+				text-decoration: none
+
+	&__provider
+		color var(--primary-accent-complimentary)
+		transition: $t-color
+		cursor: pointer
+
+		&:hover
+			color: var(--primary-accent)
+			text-decoration: underline
+
+	& .button
+		max-width: 340px
+		margin: auto

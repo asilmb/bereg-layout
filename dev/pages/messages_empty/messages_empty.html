@@ -1,0 +1,26 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+
+{% block content %}
+
+<div class="page page-profile">
+	{{ block("components/menu/profile-menu") }}
+	<section class="page-profile__content page-profile__content--messages">
+		<div class="msg__list-wrapper">
+			<h1 class="page__title">Messages</h1>
+			<!-- if list "empty" -->
+			<div class="page-notification__empty">
+				<div class="page-notification__img">
+					<img src="/img/notifications/notification--empty-messages.png" alt="">
+				</div>
+				<h1 class="page-notification__title">No messages</h1>
+				<div class="page-notification__buttons">
+					<a href="/pages/index/index.html" class="button button--w280 button--filled">Go main</a>
+				</div>
+			</div>
+			<!-- end -->
+		</div>
+	</section>
+</div>
+
+{% endblock %}

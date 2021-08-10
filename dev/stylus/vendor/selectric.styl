@@ -1,0 +1,224 @@
+// -----------------------------------------------
+// Component - Selectric
+// -----------------------------------------------
+
+.selectric-wrapper
+	position: relative
+	width: 100%
+	cursor: pointer
+	font-size 16px
+.selectric-responsive
+	width: 100%
+.selectric
+	position: relative
+	overflow: hidden
+	text-align: left
+	background #3A3A3A
+	border 1px solid #3A3A3A
+	border-radius 2px
+.selectric .label
+	display: block
+	overflow: hidden
+	text-overflow: ellipsis
+	white-space: nowrap
+	user-select: none
+	padding-left 10px
+	padding-right 30px
+	line-height 38px
+	font-weight 700
+
+.selectric .button
+	position: absolute
+	top: 0
+	right: 0
+	display: flex
+	align-items center
+	justify-content center
+	color: transparent
+	text-align: center
+	padding-left 10px
+	padding-right 10px
+	text-indent -999px
+	height 40px
+	width 40px
+	&:before, &:after
+		content: ''
+		display block
+		box-sizing: border-box
+		position: absolute
+		right: 8px
+		top: 50%
+		height: 1px
+		width: 10px
+		background: $color-grey
+		backface-visibility: hidden
+		transition-property: transform
+		transition-duration: .2s
+	&:before
+		transform rotate(45deg)
+		right 15px
+	&:after
+		transform rotate(-45deg)
+.selectric-open .button
+	&:before
+		transform rotate(-45deg)
+		background: #ffffff
+	&:after
+		transform rotate(45deg)
+		background: #ffffff
+
+.selectric-open
+	z-index: 9999
+	border-radius 2px 2px 0 0
+.selectric-open.selectric-above
+	border-radius 0 0 2px 2px
+	& .selectric
+		border-radius 0 0 2px 2px
+	& .selectric-items
+		border-radius 2px 2px 0 0
+		border-bottom none
+		border-top 1px solid $color-grey
+		border-bottom 1px solid $color-grey
+.selectric-items li:not(:last-child)
+	border-bottom 1px solid $color-grey
+
+.selectric-open .selectric-items
+	display: block
+	border 1px solid $color-grey
+	border-radius 0 0 2px 2px
+	overflow hidden
+	background #DDDDDD
+	min-width 100%
+	max-width 100%
+.selectric-disabled
+	opacity: 0.5
+	cursor: default
+	user-select: none
+.selectric-hide-select
+	position: relative
+	overflow: hidden
+	width: 0
+	height: 0
+.selectric-hide-select select
+	position: absolute
+	left: -100%
+.selectric-hide-select.selectric-is-native
+	position: absolute
+	z-index: 10
+	width: 100%
+	height: 100%
+.selectric-hide-select.selectric-is-native select
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+	z-index: 1
+	box-sizing: border-box
+	width: 100%
+	height: 100%
+	border: none
+	opacity: 0
+.selectric-input
+	position: absolute !important
+	top: 0 !important
+	left: 0 !important
+	overflow: hidden !important
+	clip: rect(0, 0, 0, 0) !important
+	margin: 0 !important
+	padding: 0 !important
+	width: 1px !important
+	height: 1px !important
+	outline: none !important
+	border: none !important
+	background: none !important
+.selectric-temp-show
+	position: absolute !important
+	display: block !important
+	visibility: hidden !important
+.selectric-items
+	position: absolute
+	top: 100%
+	left: 0
+	z-index: -1
+	display: none
+	text-align: left
+	color #000000
+.selectric-items .selectric-scroll
+	overflow: auto
+	height: 100%
+.selectric-above .selectric-items
+	top: auto
+	bottom: 100%
+.selectric-items ul, .selectric-items li
+	margin: 0
+	padding: 0
+	min-height: 40px
+	list-style: none
+	line-height: 20px
+.selectric-items li
+	display: flex
+	align-items center
+	padding: 0 10px
+	cursor: pointer
+
+.selectric-items li.selected
+	display none !important
+
+@media (hover: hover)
+	.selectric-items li:hover,
+	.selectric-items li.highlighted
+		color #ffffff
+		background-position 0 0
+.selectric-items .disabled
+	background: none !important
+	color: #666 !important
+	opacity: 0.5
+	cursor: default !important
+	user-select: none
+.selectric-items .selectric-group .selectric-group-label
+	padding-left: 10px
+	background: none
+	color: #444
+	font-weight: bold
+	cursor: default
+	user-select: none
+.selectric-items .selectric-group.disabled li
+	opacity: 1
+.selectric-items .selectric-group li
+	padding-left: 25px
+
+.form__input.error
+	& .selectric
+		border-color #ed6666
+
+
+.selectric
+	&--void
+		cursor initial
+
+		.selectric
+			background none
+
+	&--void&-open
+		box-shadow none
+
+	&--void &-items
+		display none
+
+	&--void .button
+		display none
+
+	&--void .label
+		cursor text
+
+	&--placeholder
+		.label
+			color white
+
+		.button
+			&::before
+				border-top-color white
+
+	//&-open
+	//	.label
+	//		color black

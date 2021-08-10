@@ -1,0 +1,12 @@
+<div class="slider-games-recent" data-recent-games-slider>
+	<h4>Participating games</h4>
+	<div class="games-recent__wrapper">
+		<div class="swiper-container">
+			<ul class="swiper-wrapper">
+				{% for item in range(0, 15) %}
+				{{ block("elements/recent-game-item") }}
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>

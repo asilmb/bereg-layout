@@ -1,0 +1,101 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+
+{% block content %}
+
+<div class="page">
+	<div class="container">
+		<div class="page__header">
+			<h2 class="page__title">Бонусы</h2>
+		</div>
+
+		<div class="modal__layout">
+			<ul class="modal__list">
+
+				<li>
+					<ul>
+						<li>
+							<h3>Registration</h3>
+						</li>
+						<li><a data-modal href="registration_confirmation/registration_confirmation.html" class="button button--390 button--filled">⚬ registration confirmation</a></li>
+						<li><a data-modal href="registration_success/registration_success.html" class="button button--390 button--filled">⚬ registration success</a></li>
+						<li><a data-modal href="registration_error/registration_error.html" class="button button--390 button--filled">⚬ registration error</a></li>
+					</ul>
+				</li>
+
+				<li>
+					<ul>
+						<li>
+							<h3>Restore</h3>
+						</li>
+						<li><a data-modal href="restore_success/restore_success.html" class="button button--390 button--filled">⚬ restore success</a></li>
+						<li><a data-modal href="restore_error/restore_error.html" class="button button--390 button--filled">⚬ restore error</a></li>
+						<li><a data-modal href="restore_processed/restore_processed.html" class="button button--390 button--filled">⚬ restore processed</a></li>
+					</ul>
+				</li>
+
+				<li>
+					<ul>
+						<li>
+							<h3>Profile</h3>
+						</li>
+						<li><a data-modal href="profile_create_account/profile_create_account.html" class="button button button--390 button--filled">: create account</a></li>
+						<li><a data-modal href="profile_add_account/profile_add_account.html" class="button button button--390 button--filled">: add account</a></li>
+						<li><a data-modal href="profile_all_accounts/profile_all_accounts.html" class="button button button--390 button--filled">⚬ all accounts</a></li>
+						<li><a data-modal href="profile_delete/profile_delete.html" class="button button button--390 button--filled">⚬ Delete accounts</a></li>
+					</ul>
+				</li>
+
+				<li>
+					<ul>
+						<li>
+							<h3>Payments</h3>
+						</li>
+						<li><a data-modal href="deposit_simple/deposit_simple.html" class="button button button--390 button--filled">: deposit (simple)</a></li>
+						<li><a data-modal href="deposit/deposit.html" class="button button button--390 button--filled">: deposit with bonus</a></li>
+						<li><a data-modal href="deposit/deposit-no-bonus.html" class="button button button--390 button--filled">: deposit no bonus</a></li>
+						<li><a data-modal href="deposit_confirmation/deposit_confirmation.html" class="button button button--390 button--filled">⚬ deposit confirmation</a></li>
+						<li><a data-modal href="withdraw/withdraw.html" class="button button button--390 button--filled">: withdraw</a></li>
+						<li><a data-modal href="withdraw_confirmation/withdraw_confirmation.html" class="button button button--390 button--filled">⚬ withdraw confirmation</a></li>
+					</ul>
+				</li>
+
+				<li>
+					<ul>
+						<li>
+							<h3>Games</h3>
+						</li>
+						<li><a data-modal href="loader/loader.html" class="button button button--390 button--filled">loader</a></li>
+						<li><a data-modal href="game_balance/game_balance.html" class="button button button--390 button--filled">⚬ game balance</a></li>
+						<li><a data-modal href="unknown_balance/unknown_balance.html" class="button button button--390 button--filled">⚬ unknown balance</a></li>
+					</ul>
+				</li>
+
+				<li>
+					<ul>
+						<li>
+							<h3>Bonuses</h3>
+						</li>
+						<li><a data-modal href="bonuses_giveaway/bonuses_giveaway.html" class="button button button--390 button--filled">⚬ bonuses giveaway</a></li>
+						<li><a data-modal href="bonuses_code/bonuses_code.html" class="button button button--390 button--filled">: bonuses code</a></li>
+						<li><a data-modal href="bonuses_code_success/bonuses_code_success.html" class="button button button--390 button--filled">⚬ bonuses code success</a></li>
+						<li><a data-modal href="bonuses_new_level/bonuses_new_level.html" class="button button button--390 button--filled">⚬ bonuses new level</a></li>
+						<li><a data-modal href="bonus_cancelling_warning/bonus_cancelling_warning.html" class="button button button--390 button--filled">⚬ bonus warning</a></li>
+					</ul>
+				</li>
+
+				<li>
+					<ul>
+						<li>
+							<h3>Other</h3>
+						</li>
+						<li><a data-modal--immortal href="immortal/immortal.html" class="button button button--390 button--filled">immortal</a></li>
+					</ul>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

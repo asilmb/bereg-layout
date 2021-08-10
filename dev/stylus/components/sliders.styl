@@ -1,0 +1,96 @@
+// -----------------------------------------------
+// Component - Slider
+// -----------------------------------------------
+.swiper
+
+	&-navigation
+		position absolute
+		bottom 30px
+		left 0
+		z-index 1
+		display flex
+		align-items center
+		justify-content center
+		width 100%
+
+	&-arrow
+		display flex
+		align-items center
+		justify-content center
+		width 30px
+		height 90px
+		position absolute
+		top 50%
+		transform translateY(-50%)
+		z-index 2
+		cursor pointer
+		background-color #222222
+
+		&:before
+			content ''
+			display block
+			width 20px
+			height 20px
+			border-left 2px solid var(--primary-accent)
+			border-bottom 2px solid var(--primary-accent)
+			transition: $t-border-color
+
+			@media md
+				width 15px
+				height 15px
+
+		&.swiper-button-disabled
+			cursor: default
+
+			&:before
+				border-color #ffffff
+
+		&:hover
+			&::before
+				border-color #ffffff
+
+		&--prev
+			left 0
+			&::before
+				transform rotate(45deg)
+		&--next
+			right 0
+			&::before
+				transform rotate(-135deg)
+
+// -----------------------------------------------------------------------------
+.section__header .swiper-pagination
+	display none
+	position absolute
+	left 50%
+	transform translateX(-50%)
+	z-index auto
+	height 10px
+	text-align left
+	white-space normal
+
+	&-bullet
+		display inline-block
+		width 10px
+		height 10px
+		margin 0 5px
+		background-color $color-grey
+		border-radius 20px
+		cursor pointer
+		transition: all .2s ease-out 0s;
+		&-active
+			width 40px
+			background-color var(--primary-accent)
+
+
+// -----------------------------------------------------------------------------
+.slider--disabled
+	.swiper
+		&-wrapper
+			transform translate3d(0px, 0, 0) !important
+
+		&-pagination
+			display none
+
+		&-arrow
+			display none

@@ -1,0 +1,100 @@
+/* --- Блок пагинации ------------------------------------------------------- */
+.pager
+	padding-top 45px
+	padding-bottom 45px
+	margin 0 auto
+
+	&__list
+		display flex
+		justify-content center
+
+	&__item
+		color var(--primary-accent)
+		line-height 44px
+		margin 0 10px
+
+		& a
+			display flex
+			justify-content center
+			align-items center
+			width 44px
+			height 44px
+			color var(--primary-accent-complimentary)
+			border 2px solid var(--primary-accent)
+			background-color: transparent
+			font-size: 14px
+			line-height 14px
+			font-weight: 500
+			text-transform: uppercase
+			border-radius: 16px
+			box-sizing border-box
+			transition  $t-border-color
+			cursor: pointer
+
+			&:hover
+				border-color: var(--primary-accent-lighter)
+
+		&--active a,
+		&--active a:hover
+			border-color: var(--primary-accent-lighter)
+
+		&--load-more
+			width 100%
+			display flex
+			justify-content center
+
+		&--prev a,
+		&--next a
+			width 150px
+			border 2px solid var(--primary-accent)
+			background-color: transparent
+			position relative
+			transition $t-bg-color, $t-color
+
+			&:hover
+				color: var(--secondary-accent-text)
+				border 2px solid var(--primary-accent)
+				background-color: var(--primary-accent)
+
+		&--prev i
+			margin-right 10px
+			margin-top: -1px
+		&--next i
+			margin-left 10px
+			margin-top: -1px
+
+
+
+// -----------------------------------------------------------------------------
+@media all and (max-width: 710px)
+	.pager
+		&__item
+			display: none
+
+		&__item--prev,
+		&__item--active,
+		&__item--next
+			display: block
+
+		&__item--prev a,
+		&__item--next a
+			width: 44px
+			text-indent: -9999999px
+			position: relative
+			overflow: hidden
+
+		&__item--prev i,
+		&__item--next i
+			margin: 0
+			text-indent: 0
+			background-color: var(--color-surface)
+			position: absolute
+			left: 0
+			right: 0
+			top: 0
+			bottom: 0
+			transition $t-bg-color
+
+		&__item--prev a:hover i,
+		&__item--next a:hover i
+			background-color: var(--primary-accent)

@@ -1,0 +1,240 @@
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+@media all and (max-width: 710px)
+	// ----- HEADER --------------------------------------------------------------
+	.header-logo
+		display: none
+
+		&__wrapper
+			min-width: 75px
+			height: 70px
+			position: absolute
+			top: 0
+			left: 50%
+			transform: translateX(-50%)
+
+		&__mobile
+			display: block
+
+	.header
+		&__layout
+			position: relative
+
+			&-top,
+			&-bottom
+				position: static
+
+			&-top:after
+				top: 52px
+			&-left &-top:after
+				right: calc(50% + 60px)
+			&-right &-top:after
+				left: calc(50% + 60px)
+
+			&-bottom:after
+				top: 58px
+			&-left &-bottom:after
+				right: calc(50% + 45px)
+			&-right &-bottom:after
+				left: calc(50% + 45px)
+
+		&__burger
+			height: 60px
+			margin-left: 0
+			position: absolute
+			top: 0
+			left: 0
+
+			&-icon
+				width: 55px
+				padding: 0 0 15px 0
+
+				& .icon-header-burger
+					font-size: 20px
+
+		&__search
+			height: 60px
+			width: 50px
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			font-size: 18px
+			padding: 0 0 15px 0
+			position: absolute
+			top: 0
+			left: 60px
+
+		.lang
+			margin-top: 5px
+
+		/* unlogged stuff */
+		&__buttons
+			height: 65px
+			justify-content: space-between
+			align-items: flex-start
+			position: absolute
+			left: 20px
+			right: 20px
+			bottom: 0
+
+			.button--login
+				margin-left: -5px
+
+		/* logged stuff */
+		&__user
+			height: 75px
+			justify-content: center
+			align-items: center
+			position: absolute
+			left: 20px
+			right: 20px
+			bottom: 0
+
+	.header-user
+		padding-top: 15px
+		margin: 0 5px 0 0
+		position: static
+
+		&:before,
+		&:after
+			display: none
+
+		&__avatar
+			position: relative
+
+			// --- move arrow to children ---
+			&:before, &:after
+				content: ''
+				display block
+				box-sizing: border-box
+				position: absolute
+				right: -23px
+				top: 50%
+				height: 2px
+				width: 10px
+				margin-top: -5px
+				background-color: var(--primary-accent-complimentary)
+				backface-visibility: hidden
+				transition: transform .2s ease-out
+			&:before
+				transform rotate(45deg)
+				right -16px
+			&:after
+				transform rotate(-45deg)
+
+		// --- arrow when menu opened ---
+		&.active &__avatar
+			&:before
+				transform rotate(-45deg)
+			&:after
+				transform rotate(45deg)
+
+		&__menu
+			left: 50%
+			transform: translateX(-50%)
+
+	.button--transactions
+		margin-right: 10px
+		margin-bottom: 10px
+
+	// ------ FOOTER -------------------------------------------------------------
+	.footer
+		&__layout
+			padding-left: 40px
+			padding-right: 40px
+
+		&__menu
+			width: calc(100% / 2 - 25px)
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+@media all and (max-width: 750px)
+	// ----- HEADER --------------------------------------------------------------
+	.user-avatar
+		margin: 0
+
+		&__links
+			display: none
+
+		&__wrapper
+			padding-left: 10px
+			margin-right: 15px
+
+	// ----- JACKPOTS & WINNERS section / MAIN page ------------------------------
+	.jackpots-winners__section
+		&-container
+			padding-top: 80px
+			padding-left: 20px
+			padding-right: 20px
+
+		&-inner
+			flex-direction: column
+			align-items: center
+			margin-bottom: 50px
+
+		/* coins & sea horse */
+		&-container:before
+		&:before,
+		&:after
+			display: none
+
+	.winners,
+	.jackpots
+		padding-top: 0
+
+	.winners__wrapper
+		order: 2
+
+	.jackpots__wrapper
+		order: 1
+		margin-bottom: 30px
+
+	/* ----- main page coins -------------------------------------------------- */
+	.games__section-coins-holder,
+	.games__section-coins-holder + .container
+		&:before,
+		&:after
+			display: none
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+@media all and (max-width: 768px)
+
+	// ----- HEADER --------------------------------------------------------------
+	.header
+		&__layout
+			&-top
+				padding-left: 20px
+				padding-right: 20px
+
+			&-bottom
+				padding-left: 20px
+				padding-right: 20px
+
+	.currency
+		display: none
+
+	// ----- BONUSES -------------------------------------------------------------
+	.page-profile__content .bonuses__list,
+	.shop__list
+		grid-template-columns: repeat(2,1fr)
+
+	// ----- ONE BONUS (bonuses info) page ---------------------------------------
+	.bonus-info
+		max-width: 690px
+
+		&__header
+			height: 305px
+			padding: 30px
+
+		&__content
+			padding-left: 50px
+			padding-right: 50px
+			margin-top: -5px
+
+		&__title
+			font-size: 30px
+			line-height: 38px

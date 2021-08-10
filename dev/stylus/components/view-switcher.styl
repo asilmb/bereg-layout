@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+.view-switcher
+	display flex
+	justify-content flex-end
+	align-items center
+
+	&__view
+		width: 52px
+		height: 52px
+		padding: 10px
+		cursor pointer
+
+		& i
+			font-size 32px
+			color: var(--primary-accent-lighter)
+			transition: $t-color
+			cursor pointer
+
+		&:hover i,
+		&.active i
+			color: var(--primary-accent)

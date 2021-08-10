@@ -1,0 +1,16 @@
+{% set logged = "yes" %}
+{% extends "master/master.html" %}
+
+{% block content %}
+
+<div class="page page__tournament">
+	<div class="container">
+        <header class="page__header page__header--center">
+            <h1 class="page__title">Tournament List</h1>
+        </header>
+        {{ block("components/tournament-list") }}
+	</div>
+</div>
+
+
+{% endblock %}

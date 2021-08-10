@@ -1,0 +1,75 @@
+.jackpots
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+	align-items: center
+	padding-top: 30px
+
+	&__wrapper
+		display: flex
+		flex-direction: column
+		justify-content: flex-start
+		align-items: center
+
+	&__title
+		font-size 24px
+		line-height: 1.5
+		font-weight 700
+		text-transform: uppercase
+		color var(--primary-accent-complimentary)
+		margin-bottom: 40px
+
+	&__item
+		display flex
+		justify-content space-between
+		align-items center
+		height: 65px
+		width 360px
+		padding 15px 50px
+		background-color $color-background-secondary
+		position: relative
+
+		&:not(:last-child)
+			margin-bottom: 35px
+
+		&-icon
+			width: 35px
+			height: 45px
+			object-fit: contain
+			margin-right: 5px
+
+		&-value
+			font-size 30px
+			line-height: 30px
+			font-weight: 700
+			white-space: nowrap
+			text-align: right
+			overflow: hidden
+			text-overflow: ellipsis
+
+		&.diamond &-value
+			color: #8CD8D3
+		&.gold &-value
+			color: #FFC057
+		&.silver &-value
+			color: #C6C6C6
+		&.bronze &-value
+			color: #803D00
+
+		/* bottom line */
+		&:after
+			content: ""
+			height: 2px
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+
+		&.diamond:after
+			background-color: #8CD8D3
+		&.gold:after
+			background-color: #FFC057
+		&.silver:after
+			background-color: #C6C6C6
+		&.bronze:after
+			background-color: #803D00

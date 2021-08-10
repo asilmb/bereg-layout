@@ -1,0 +1,39 @@
+<div class="slider-choose-bonus" data-choose-bonus-slider>
+	<h4>Choose your bonus</h4>
+	<div class="choose-bonus__wrapper">
+		<span class="slider-arrow--prev"><i class="icon-slide-prev"></i></span>
+		<div class="swiper-container">
+			<ul class="swiper-wrapper">
+				{% for item in range(0, 5) %}
+				<li class="bonuses__item swiper-slide">
+					<div class="bonuses__item__content">
+						<div class="bonuses__item__img">
+							<img src="/img/components/bonuses/1.png" alt="">
+						</div>
+						<ul class="bonuses__item__params">
+
+							<li>
+								Max. deposit::
+								<span>1500</span>
+							</li>
+							<li>
+								Wager:
+								<span>15</span>
+							</li>
+							<li>
+								Max. bonus amount:
+								<span>1000</span>
+							</li>
+							{{ fieldCheckbox("bonus", "Choose this bonus", "", "", "") }}
+						</ul>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+
+		</div>
+		<span class="slider-arrow--next"><i class="icon-slide-next"></i></span>
+		<div class="swiper-pagination"></div>
+	</div>
+
+</div>
