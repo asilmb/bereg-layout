@@ -1,0 +1,76 @@
+@import "src/app/common/scss/colors";
+
+.lending-price-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .price-background {
+    background: $main-red;
+    height: 50vh;
+    width: 100%;
+    position: absolute;
+  }
+  .price-container {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    .price-title-container {
+      margin: 5rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .price-title {
+        color: $white;
+        margin-bottom: 1rem;
+      }
+      .price-desc {
+        font-size: 20px;
+        color: $white;
+      }
+    }
+    .cards-container {
+      display: flex;
+      width: 100%;
+      .card {
+        margin: 3rem 1rem;
+        background: $grey;
+        width: 30%;
+        border-radius: 30px;
+        .card-title {
+          margin: 2rem 3rem;
+          font-size: 30px;
+          color: $text-black;
+          text-align: center;
+        }
+        .card-img {
+          height: 300px;
+          width: 250px;
+        }
+        .card-btn-container {
+          display: flex;
+          justify-content: center;
+          margin: 2rem 1rem;
+          .card-btn {
+            padding: 1rem 2rem;
+            background: $main-red;
+            color: $white;
+            text-align: center;
+            border-radius: 50px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+      .optimal {
+        width: 35%;
+        margin: 0;
+        .card-img {
+          height: 400px;
+          width: 250px;
+        }
+      }
+    }
+  }
+}

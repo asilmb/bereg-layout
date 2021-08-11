@@ -1,0 +1,72 @@
+@import "src/app/common/scss/colors";
+
+.cabinet-diet-section {
+  margin: 2rem;
+  .diet-title {
+    margin: 1rem 0;
+    font-size: 20px;
+    color: $text-black;
+    font-family: cursive;
+  }
+  .expand-container {
+    .expend-card {
+      margin: 2rem 0;
+      padding: 1rem 0;
+      border-radius: 20px;
+      .panel-title {
+        display: flex;
+        align-items: center;
+        .panel-title-img {
+          margin-right: 1rem;
+          height: 38px;
+          width: 38px;
+          background: $main-yellow;
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .panel-img {
+            height: 32px;
+            width: 32px;
+          }
+
+        }
+      }
+      .panel-decs {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .pfc-info {
+        text-align: right;
+        font-family: cursive;
+        font-size: 12px;
+      }
+      .portion-container {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+        .portion-title {
+          font-size: 18px;
+          font-family: cursive;
+        }
+        .portion-count {
+          display: flex;
+          .portion-kcal {
+            margin: 0 1rem;
+            font-size: 18px;
+            font-family: cursive;
+          }
+          .portion-pfc-container {
+            display: flex;
+            .pfc-value {
+              margin: 0 2px;
+              font-family: cursive;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

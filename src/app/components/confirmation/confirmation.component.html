@@ -1,0 +1,22 @@
+<section class="confirmation-reg-section">
+  <div class="confirmation-container">
+    <div class="text-container">
+      <div class="title">
+        Confirmation
+      </div>
+      <div class="desc">
+        Thank you for your confirmation. <br>
+      </div>
+    </div>
+    <div *ngIf="spinner; then wait else start"></div>
+    <ng-template #wait>
+      <mat-spinner class="spinner"></mat-spinner>
+    </ng-template>
+    <ng-template #start>
+      <button mat-button class="confirm-btn" [routerLink]="'/' + url.settings">Confirm and continue</button>
+    </ng-template>
+  </div>
+  <div class="confirmation-img">
+    <img src="assets/images/confirme.jpeg" alt="">
+  </div>
+</section>

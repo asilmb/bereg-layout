@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+body { margin: 0; font-family: cursive, "Work Sans", sans-serif; }
+
+.main{
+  margin: 0 15%;
+}
+h1, h2 {
+  font-family: cursive;
+}
+.text-title {
+  font-size: 50px;
+  line-height: 50px;
+  font-family: cursive;
+  font-weight: bold;
+}
+body .toast-container .ngx-toastr {
+  background-position: 15px center;
+  background-size: 16px;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 10px 15px 10px 40px;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.mat-progress-spinner.mat-warn circle, .mat-spinner.mat-warn circle {
+   stroke: #ffd538;
+}

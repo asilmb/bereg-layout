@@ -1,0 +1,51 @@
+@import "src/app/common/scss/colors";
+
+.cabinet-info-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 2fr;
+  height: 100%;
+  width: 100%;
+
+  .info-result {
+
+  }
+  .info-info {
+  }
+  .info-news-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 2rem;
+    background: $light-white;
+    border-radius: 20px;
+    .news-title {
+      font-size: 25px;
+      line-height: 25px;
+      color: $text-black;
+      font-family: cursive;
+      font-weight: bold;
+    }
+    .news-desc {
+      margin-top: 1rem;
+      font-family: cursive;
+      color: $text-black;
+
+    }
+    .news-info {
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .news-img {
+        height: 64px;
+        width: 128px;
+        background: $main-yellow;
+      }
+      .news-more-btn {
+        width: 32px;
+      }
+
+    }
+  }
+}

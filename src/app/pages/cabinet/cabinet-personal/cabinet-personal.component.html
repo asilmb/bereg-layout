@@ -1,0 +1,18 @@
+<section class="cabinet-personal-section">
+  <button mat-button class="personal-logout" (click)="logout()">logout</button>
+  <div class="personal-container" routerLink="/profile">
+    <div class="personal-content">
+      <div class="personal-name"
+           matTooltipPosition="above"
+           [matTooltip]="user.email || 'test' ">
+        {{user.email}}
+      </div>
+      <div class="personal-profile">
+        My Profile
+      </div>
+    </div>
+    <div class="personal-img">
+      <img class="user-photo" src="assets/images/portrait.jpg">
+    </div>
+  </div>
+</section>

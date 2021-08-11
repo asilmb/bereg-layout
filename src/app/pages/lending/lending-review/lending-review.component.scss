@@ -1,0 +1,72 @@
+@import "src/app/common/scss/colors";
+
+.lending-review-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+      margin: 1rem;
+      color: $text-black;
+    }
+    .desc {
+      color: $text;
+      font-size: 20px;
+    }
+  }
+  .review-container {
+    width: 100%;
+    height: 50vh;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    .review-card {
+      padding: 2rem;
+      background: $light-white;
+      border-radius: 30px;
+      .card-title {
+        .review-title {
+          color: $text-black;
+          font-size: 30px;
+          line-height: 30px;
+          font-family: cursive;
+        }
+        .review-desc {
+          margin: 1rem 0;
+          color: $text;
+
+        }
+      }
+    }
+    .card-info {
+      display: flex;
+      align-items: center;
+      .info-img-container {
+        width: 55px;
+        height: 55px;
+        background: $text;
+        border-radius: 50%;
+      }
+      .info-container {
+        margin-left: 2rem;
+        .info-title {
+          line-height: 22px;
+          font-family: cursive;
+          font-size: 22px;
+          color: $text-black;
+
+        }
+        .info-desc {
+          color: $text;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

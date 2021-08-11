@@ -1,0 +1,22 @@
+<section class="menu-section">
+  <div class="menu-container">
+    <mat-list role="list" class="list">
+      <div *ngFor="let menu of menuList">
+        <mat-list-item [routerLink]="menu.url"
+                       routerLinkActive="item-active"
+                       class="list-item" role="listitem">
+          <span class="material-icons icon-menu">{{menu.icon}}</span>
+          {{menu.name}}
+        </mat-list-item>
+      </div>
+    </mat-list>
+    <button mat-button>
+    </button>
+    <mat-list class="list" role="list">
+      <mat-list-item class="list-item" role="listitem" (click)="logout()">
+        <span class="material-icons icon-menu">logout</span>
+        Logout
+      </mat-list-item>
+    </mat-list>
+  </div>
+</section>

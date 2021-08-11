@@ -1,0 +1,92 @@
+@import "src/app/common/scss/colors";
+
+.home-diet-section {
+  margin-top: 2rem;
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .diet-title {
+      margin-bottom: 1rem;
+      font-size: 24px;
+    }
+    .see-all {
+      color: $blue-text;
+    }
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+    .diet-container {
+      .card-img {
+        height: 200px;
+        background: #4b4c50;
+        .img-label {
+          position: absolute;
+          color: $white;
+          z-index: 2;
+          &:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            border-style: solid;
+            border-width: 60px 0 30px 120px;
+            border-color: $blue transparent transparent $blue;
+            transition: top .4s;
+          }
+          .card-type {
+            margin: 2rem 0 0 2rem;
+          }
+        }
+        .menu-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+      }
+      .card-title {
+        margin: 2rem 0;
+        font-size: 15px;
+        font-weight: 400;
+      }
+      .card-info {
+        .kcal-container {
+          font-size: 25px;
+          line-height: 1;
+          font-weight: 700;
+          color: $text;
+        }
+        .allergen-container {
+          margin-top: 1rem;
+          display: flex;
+          color: $text-black;
+          .allergen-text {
+            margin-right: 1rem;
+          }
+        }
+      }
+      .card-pfc {
+        margin-top: 2rem;
+        display: flex;
+        .pfc-container {
+          display: flex;
+          flex-direction: column;
+          color: $text-black;
+          margin-right: 1rem;
+          .pfc-height {
+            font-size: 16px;
+          }
+          .pfc-desc {
+
+          }
+        }
+      }
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+  }
+}

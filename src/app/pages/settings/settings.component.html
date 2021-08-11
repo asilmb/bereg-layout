@@ -1,0 +1,169 @@
+<section class="section-setting">
+  <div class="setting-container">
+    <mat-horizontal-stepper linear="true" #stepper class="stepper-container">
+      <mat-step [stepControl]="personalForm">
+        <form [formGroup]="personalForm" class="form-container">
+          <ng-template matStepLabel>Fill out personal information</ng-template>
+          <mat-button-toggle-group
+            class="btn-group"
+            formControlName="gender"
+            name="fontStyle"
+            aria-label="Font Style">
+            <mat-button-toggle [value]="0">
+              <img src="assets/images/male-icon.png" alt="">
+            </mat-button-toggle>
+            <mat-button-toggle [value]="1">
+              <img src="assets/images/female-icon.png" alt="">
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+          <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First name" formControlName="firstName" required>
+            <mat-error></mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last name" formControlName="lastName" required>
+            <mat-error></mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Height</mat-label>
+            <input matInput placeholder="Height" type="number" formControlName="height" required>
+            <mat-error></mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Weight</mat-label>
+            <input matInput placeholder="Weight" type="number" formControlName="weight" required>
+            <mat-error></mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birthday">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <div>
+            <p>Go to a different step to see the error state</p>
+            <button mat-button matStepperNext [disabled]="personalForm.invalid" (click)="sendPersonalInfo()">Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="imagesForm" errorMessage="Address is required.">
+        <div class="uid-container">
+          <div class="title">
+            Your number
+          </div>
+          <div class="uid-text">
+            {{currentUser.uuid}}
+          </div>
+        </div>
+        <form [formGroup]="imagesForm" class="imagesForm">
+          <ng-template matStepLabel>Fill out your address</ng-template>
+
+          <div class="images-container">
+            <div class="example-front">
+              <img class="exImg" src="assets/images/front.jpg" alt="">
+            </div>
+            <div class="front">
+              <input type="file"
+                     class="file"
+                     id="uploadFront"
+                     formControlName="backImg"
+                     (change)="onSelectFile($event, side.front)">
+              <div *ngIf="frontImg then photoFront else uploadFront"></div>
+              <ng-template #uploadFront>
+                <label class="test" for="uploadFront">
+                  <div class="upload-container">
+                    <img src="assets/images/upload.png" alt="">
+                    <div>upload your photo</div>
+                  </div>
+                </label>
+              </ng-template>
+              <ng-template #photoFront>
+                <img class="exImg" [src]="frontImg" alt="">
+              </ng-template>
+            </div>
+            <div class="example-side">
+              <img class="exImg" src="assets/images/side.jpg" alt="">
+            </div>
+            <div class="side">
+              <input type="file"
+                     class="file"
+                     id="uploadSide"
+                     formControlName="sideImg"
+                     (change)="onSelectFile($event, side.side)">
+              <div *ngIf="sideImg then photoSide else uploadSide"></div>
+              <ng-template #uploadSide>
+                <label class="test" for="uploadSide">
+                  <div class="upload-container">
+                    <img src="assets/images/upload.png" alt="">
+                    <div>upload your photo</div>
+                  </div>
+                </label>
+              </ng-template>
+              <ng-template #photoSide>
+                <img class="exImg" [src]="sideImg" alt="">
+              </ng-template>
+            </div>
+            <div class="example-back">
+              <img class="exImg" src="assets/images/back.jpg" alt="">
+            </div>
+            <div class="back">
+              <input type="file"
+                     class="file"
+                     id="uploadBack"
+                     formControlName="frontImg"
+                     (change)="onSelectFile($event, side.back)">
+              <div *ngIf="backImg then photoBack else uploadBack"></div>
+              <ng-template #uploadBack>
+                <label class="test" for="uploadBack">
+                  <div class="upload-container">
+                    <img src="assets/images/upload.png" alt="">
+                    <div>upload your photo</div>
+                  </div>
+                </label>
+              </ng-template>
+              <ng-template #photoBack>
+                <img class="exImg" [src]="backImg" alt="">
+              </ng-template>
+            </div>
+          </div>
+        </form>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Payment</ng-template>
+        <div class="payment-container">
+          <div class="payment-price-container">
+            <div class="payment-text">
+              To Pay
+            </div>
+            <div class="payment">
+              500Kc
+            </div>
+          </div>
+          <div class="payment-info-container">
+            <div class="img-payment-container">
+              <img class="img-payment" src="assets/images/card.jpeg" alt="">
+            </div>
+            <div class="payment-btn-container">
+              <button mat-button class="payment-btn">
+                Pay Now
+              </button>
+            </div>
+<!--            <button mat-button class="payment-apple">-->
+<!--              Pay-->
+<!--            </button>-->
+          </div>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</section>
+

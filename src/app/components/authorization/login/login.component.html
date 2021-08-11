@@ -1,0 +1,48 @@
+<section class="login-section">
+  <div class="login-container">
+    <div class="login-title">
+      Login
+    </div>
+    <div class="social-container">
+      <div class="social-content">
+        <div class="social">
+          <img src="assets/images/facebook.png">
+        </div>
+        <div class="social">
+          <img src="assets/images/instagram.png">
+        </div>
+      </div>
+      <div class="social-text-container">
+        <span class="social-text">or</span>
+      </div>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="loginGroup" class="login-form-container">
+        <mat-form-field class="manual-input">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" type="email" matInput placeholder="Email">
+          <mat-error *ngIf="controls.email.hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="controls.email.hasError('email')">
+            Email is incorrect
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="manual-input">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" type="password" matInput placeholder="password">
+          <mat-error *ngIf="controls.password.hasError('required')">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+        <button class="login-button"
+                (click)="login()"
+                mat-button [disabled]="loginGroup.invalid"
+                type="submit">login</button>
+      </form>
+    </div>
+  </div>
+  <div class="login-image">
+    <img class="login-img" src="assets/images/bannerLogo.png">
+  </div>
+</section>
