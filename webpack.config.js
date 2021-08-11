@@ -2,7 +2,18 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-    plugins: [ 
+    mode: 'development',
+    watch: true,
+    watchOptions: {
+        aggregateTimeout: 200,
+        poll: 1000,
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 9000,
+    },
+    plugins: [
         new webpack.ProvidePlugin({ 
             "jQuery": "jquery", 
             "window.jQuery": "jquery", 
