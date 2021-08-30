@@ -1,7 +1,8 @@
-block variables
+include ./../../blocks/modules/header/header.pug
+include ./../../blocks/modules/footer/footer.pug
 
-doctype html
-html(lang="ru")
+block variables
+html
 	head
 		meta(charset="utf-8")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -27,5 +28,9 @@ html(lang="ru")
 		link(rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png")
 		link(rel="stylesheet" href="styles/main.css")
 	body
-		block content
+		+header_block()
+		.container
+			block content
 		block scripts
+
+
