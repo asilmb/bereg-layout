@@ -38,7 +38,6 @@
         "del": "^5.1.0",
         "eslint": "~7.7.0",
         "gulp": "^4.0.0",
-        "pug-alias": "^2.0.1",
         "gulp-autoprefixer": "~7.0.1",
         "gulp-clean-css": "~4.3.0",
         "gulp-debug": "~4.0.0",
@@ -64,6 +63,7 @@
         "imagemin-webp": "^6.0.0",
         "imagemin-zopfli": "^7.0.0",
         "lint-staged": "^10.0.3",
+        "pug-alias": "^2.0.1",
         "require-dir": "^1.2.0",
         "stylelint": "^13.6.1",
         "stylelint-order": "^4.1.0",
@@ -73,6 +73,9 @@
         "yargs": "~15.4.1"
     },
     "dependencies": {
+        "@popperjs/core": "^2.9.3",
+        "autoprefixer": "^10.3.3",
+        "bootstrap": "^5.1.0",
         "smart-grid": "^2.1.2"
     },
     "husky": {
